@@ -90,22 +90,38 @@ export default function Navbar() {
               <nav aria-label="Global">
                 <ul className="flex items-center gap-20 text-[1rem] text-black">
                   <li>
-                    <Link to="/program" className="transition hover:text-gray-500/75" onClick={closeMenu}>
+                    <Link
+                      to="/program"
+                      className="transition hover:text-gray-500/75"
+                      onClick={closeMenu}
+                    >
                       Program
                     </Link>
                   </li>
                   <li>
-                    <Link to="/platform" className="transition hover:text-gray-500/75" onClick={closeMenu}>
+                    <Link
+                      to="/platform"
+                      className="transition hover:text-gray-500/75"
+                      onClick={closeMenu}
+                    >
                       Platform
                     </Link>
                   </li>
                   <li>
-                    <Link to="/research" className="transition hover:text-gray-500/75" onClick={closeMenu}>
+                    <Link
+                      to="/research"
+                      className="transition hover:text-gray-500/75"
+                      onClick={closeMenu}
+                    >
                       Research
                     </Link>
                   </li>
                   <li>
-                    <Link to="/about" className="transition hover:text-gray-500/75" onClick={closeMenu}>
+                    <Link
+                      to="/about"
+                      className="transition hover:text-gray-500/75"
+                      onClick={closeMenu}
+                    >
                       About
                     </Link>
                   </li>
@@ -172,7 +188,7 @@ export default function Navbar() {
           }`}
         >
           <div className="flex flex-col h-full relative">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-400"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FC350B] to-[#FF6B35]"></div>
 
             <nav className="flex-1 px-4 pt-28">
               <ul className="space-y-3">
@@ -200,7 +216,7 @@ export default function Navbar() {
                     label: "Research",
                     icon: "🔍",
                     desc: "View our research",
-                  },                  
+                  },
                   {
                     to: "/about",
                     label: "About",
@@ -208,7 +224,10 @@ export default function Navbar() {
                     desc: "Learn more about us",
                   },
                 ].map(({ to, label, icon, desc }, index) => (
-                  <li key={to} className={`transform transition-all duration-300 delay-${index * 100}`}>
+                  <li
+                    key={to}
+                    className={`transform transition-all duration-300 delay-${index * 100}`}
+                  >
                     <Link
                       to={to}
                       onClick={closeMenu}
@@ -218,7 +237,9 @@ export default function Navbar() {
                         <span className="text-xl">{icon}</span>
                       </div>
                       <div className="flex-1">
-                        <span className="font-medium text-base block">{label}</span>
+                        <span className="font-medium text-base block">
+                          {label}
+                        </span>
                         <span className="text-xs text-gray-500 group-hover:text-orange-500">
                           {desc}
                         </span>
@@ -229,7 +250,12 @@ export default function Navbar() {
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
                       </svg>
                     </Link>
                   </li>
@@ -241,10 +267,15 @@ export default function Navbar() {
               <Link
                 to="/login"
                 onClick={closeMenu}
-                className="w-full block py-4 px-6 rounded-xl bg-gradient-to-r from-orange-500 to-orange-400 text-white font-semibold hover:from-orange-600 hover:to-orange-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
+                className="w-full block py-4 px-6 rounded-xl bg-gradient-to-r from-[#FC350B] to-[#FF6B35] text-white font-semibold hover:from-[#FC350B] hover:to-[#FF6B35] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span className="flex items-center justify-center gap-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"

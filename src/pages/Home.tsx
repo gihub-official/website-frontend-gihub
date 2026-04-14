@@ -1,35 +1,15 @@
 import { Link } from 'react-router-dom';
-import img1 from "../assets/image.png";
-import img2 from "../assets/image1.png";
-import img3 from "../assets/image2.png";
-import img4 from "../assets/working.png";
-import img5 from "../assets/workingsm.png";
-import bgImage from "../assets/bg-image.png";
-// import FirstCard from "../components/FirstCard";
-// import SecondCard from "../components/SecondCard";
-// import ThirdCard from "../components/ThirdCard";
-// import CardFour from "../components/CardFour";
-import vector from "../assets/contactVector.png";
-import frame from "../assets/image/Frame 396.svg"
-// import GlowButton from '../components/GlowButton';
-import frame2 from "../assets/image/framw2.svg"
-import { Lightbulb, Zap, Users, Target, TrendingUp } from 'lucide-react';
-import boy from "../assets/image/boy.svg"
-import hey from "../assets/image/hey.svg"
-import girl from "../assets/image/girl.svg"
-import vector2 from "../assets/image/Vector.svg"
-import vector3 from "../assets/image/Vector 3.svg"
-// import Accordion from '../components/Accordion';
-import image from "../assets/image/image.svg"
-import grid from "../assets/image/hero-grid.DF71ygke.svg"
-// import useHandleModal from '../zustard/useHandleModal';
-import atom from "../assets/image/atom.svg"
-import bulb from "../assets/image/bulb.svg"
-import gym from "../assets/image/gym.svg"
-
+import img1 from "../assets/image1.png";
+import img2 from "../assets/image2.png";
+import { Aperture, Component, Command, Hexagon } from 'lucide-react';
+import PlatformCard from "../components/PlatformCard";
 import AOS from "aos"
 import { useEffect } from 'react';
 import 'aos/dist/aos.css';
+
+
+
+
 const Home = () => {
   const setTheClickedModal = (m: string) => {};
   useEffect(() => {
@@ -40,204 +20,311 @@ const Home = () => {
     })
   }, [])
 
+  const platforms = [
+    {
+      title: "StartupVerse",
+      description: "The digital startup ecosystem where the other 90% of founders turn ideas into real startups with zero execution gaps.",
+      linkText: "View platform",
+      linkUrl: "https://startupverse.app",
+    },
+    {
+      title: "OmicsBoard",
+      description: "Empowering life science researchers with intuitive bioinformatics and data analytics tools.",
+      linkText: "View platform",
+      linkUrl: "https://omicsboard.com",
+    },
+    {
+      title: "Certifyer",
+      description: "A secure digital credentialing platform for modern educational and professional institutions.",
+      linkText: "View platform",
+      linkUrl: "https://certifyer.online",
+    },
+    {
+      title: "Healthmania",
+      description: "Advancing digital health technologies to improve patient outcomes across the continent.",
+      linkText: "View platform",
+      linkUrl: "https://healthmania.app",
+    }
+  ];
 
   return (
-    <div className=''>
-
-      <section className="flex relative flex-col items-center justify-center mt-40  md:mt-50 lg:mt-10 px-4 md:px-10">
-        {/* <GlowButton desc={"Build your first Bioinformatics app in Python & Streamlit"} /> */}
-        <img src={image} className='absolute hidden md:-top-60' />
-        <img src={grid} className='absolute -top-60  opacity-6 -z-1' />
-
-        <div className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] mx-auto mt-8 font-semibold z-10 leading-snug md:leading-tight lg:leading-[4.5rem] max-w-5xl">
-          Enhancing Lives And Driving Economic{" "}
-          <span className="text-darkOrange bg-gray-50 border border-gray-200 rounded-md md:rounded-lg px-3 font-light font-['Libre_Baskerville'] italic text-2xl sm:text-3xl md:text-5xl lg:text-6xl">
-            Growth.
+    <div className="">
+      <section className="relative flex flex-col items-center pt-32 md:pt-48 pb-0 px-4 md:px-10 mx-2 md:mx-6 md:mt-2 lg:-mt-28 rounded-[2rem] border border-purple-100 shadow-sm bg-gradient-to-b from-[#FFF5F0] via-[#FCF3F5] to-white overflow-hidden">
+        {/* Background Decorative Wavy Image - Pushed to the bottom */}
+        <div className="text-center text-[2.5rem] sm:text-4xl md:text-5xl lg:text-[4.5rem] mx-auto font-semibold z-10 leading-[1.1] md:leading-[1.1] max-w-5xl text-[#1A1A1A] tracking-[-0.02em]">
+          Building Africa's Innovation Eco system{" "}
+          <span className="font-light font-['Libre_Baskerville'] italic text-[2.5rem] sm:text-3xl md:text-5xl lg:text-[4.5rem]">
+            Empower{" "}
           </span>
+          Your Team
         </div>
 
-        <p className="text-center z-0 mt-5 md:mt-7 text-[.9rem] sm:text-base md:text-lg text-gray-600 font-normal max-w-xl px-2">
-          Explore the Future of Health Tech and Broader Technological Innovations with G-iHub.
+        <p className="text-center z-10 mt-6 md:mt-8 text-[1rem] sm:text-base md:text-lg text-gray-500 font-normal max-w-3xl px-4 leading-relaxed">
+          G-iHub is a venture builder and platform creation to solution provider
+          developing the next generation of African founders, researchers, and
+          innovation infrastructure.
         </p>
 
-        <div className="z-0 flex flex-row items-center justify-center mt-10 gap-4">
-          <button onClick={() => { setTheClickedModal("signUp"); }} className="bg-gradient-to-br from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500  py-2 cursor-pointer px-4 sm:py-3 sm:px-8 rounded-full text-white shadow-md flex items-center text-[1rem] sm:text-[.9rem]">
-            <p>Get started</p>
-
+        <div className="z-10 flex flex-row items-center justify-center mt-10 gap-4">
+          <button
+            onClick={() => {
+              setTheClickedModal("signUp");
+            }}
+            className="bg-[#FC350B] hover:bg-[#FF6B35] transition-colors duration-300 py-3 px-8 rounded-full text-white shadow-md flex items-center text-[1rem] sm:text-[1rem] font-medium"
+          >
+            Explore platform
           </button>
-
-          <button className=" hover:from-orange-600 hover:to-orange-500  py-2 cursor-pointer px-4 sm:py-3 sm:px-8 rounded-full text-black border-[1px] border-gray-400 shadow-md flex items-center text-[1rem] sm:text-[.9rem]">
-            <Link to="/about">Contact Us</Link>
-          </button>
-
         </div>
 
-        <div className="my-10 flex items-center justify-center w-full max-w-6xl h-auto px-4">
-          <img src={frame} alt="G-iHub Frame" className="w-[600px] md:w-full h-auto" />
+        {/* Wavy Img */}
+        <div className="w-full h-auto mt-4 md:mt-8 z-0 flex items-center justify-center">
+          <img 
+            src={img1} 
+            alt="Wavy Abstract" 
+            className="w-[110%] max-w-none md:w-[90%] md:max-w-7xl h-auto object-cover transform translate-y-4 md:translate-y-12" 
+          />
         </div>
       </section>
 
-      <section data-aos="slide-up" className="my-20 max-w-7xl mx-auto ">
-
-        <div className='pt-20'>
-          <p className='text-center text-[1.8rem] sm:w-[70%] md:w-[50%]  md:leading-12 font-bold mx-auto lg:text-4xl '>
-            We Are Transforming Ideas into Sustainable <span className="text-darkOrange ">Innovations.</span>
+      <section className="bg-[#F6F5EF] ">
+        <section
+          data-aos="slide-up"
+          className="my-20 max-w-7xl mx-auto bg-[#F6F5EF] px-16 py-10 rounded-2xl"
+        >
+          <p className="px-4 text-sm text-[#FF4103] ">
+            // Ecosystem Platform //
           </p>
-        </div>
 
-
-        <div className="mx-auto md:mx-10 py-8 px-5">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 ">
-            <div className="bg-orange-50  border-orange-200 rounded-2xl px-6 sm:px-8 pt-10 h-auto min-h-[639px] relative overflow-hidden ">
-              {/* Decorative Vectors - Background */}
-              <img src={vector3} className='absolute top-2 left-1/2 transform -translate-x-1/2 w-40 sm:w-48 opacity-50' />
-              <img src={vector3} className='absolute top-10 left-20 w-52 sm:w-80 opacity-50' />
-              <img src={vector3} className='absolute top-2 -left-4 w-60 sm:w-[30rem] opacity-50' />
-              <img src={vector2} className='absolute -bottom-2 -left-4 w-full max-w-[50rem] opacity-50' />
-              <img src={vector2} className='absolute -bottom-24 left-2 w-96 sm:w-[480px] opacity-50' />
-              <img src={vector2} className='absolute -bottom-36 left-8 w-80 sm:w-[400px] opacity-50' />
-
-              {/* Content */}
-              <div className="flex flex-col gap-3 mb-4 z-10 relative">
-                <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
-                  {/* <Lightbulb className="w-5 h-5 text-white" /> */}
-                  <img src={bulb} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800">Tech Innovations</h3>
-              </div>
-
-              <p className="text-gray-600 text-sm leading-relaxed z-10 relative max-w-lg">
-                We're dedicated to accelerating technological innovations,
-                such as Omnichannel, Multifinance, and AMization Africa. Our
-                focus on data and technology acceleration enables us to bring cutting-
-                edge solutions to market faster, driving transformative change
-                across healthcare and broader technological sectors.
+          <div className="flex flex-row items-center justify-between mt-10 mx-auto px-2 md:px-4">
+            <div className="text-md md:text-3xl w-1/2">
+              <p>Four Platform</p>
+              <p>One Ecosystem.</p>
+            </div>
+            <div className="text-xs md:text-md max-w-md w-1/2">
+              <p>
+                Each platform solves a specific infrastructure problem for
+                African innovators.
               </p>
+            </div>
+          </div>
+        </section>
 
-              {/* Foreground Image - Boy */}
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 sm:bottom-auto sm:top-[21rem] sm:left-[123px] sm:translate-x-0 w-72 sm:w-[328px] h-auto z-10">
-                <img src={boy} className=" sm:w-full h-auto" />
-              </div>
+        <section
+          data-aos="slide-up"
+          className="rounded-none lg:rounded-3xl md:mx-10 mt-20 px-2 pt-5 mx-auto max-w-7xl bg-[#F6F5EF] "
+        >
+          <div className="flex flex-col items-center justify-center mx-auto gap-10">
+            {platforms.map((platform, index) => (
+              <PlatformCard
+                key={index}
+                title={platform.title}
+                description={platform.description}
+                linkText={platform.linkText}
+                linkUrl={platform.linkUrl}
+                isReversed={index % 2 !== 0}
+              />
+            ))}
+          </div>
+        </section>
 
+        <section data-aos="slide-up" className="my-20 max-w-7xl mx-auto md:px-10 px-4">
+          <div className="mb-16">
+            <p className="text-sm text-[#FF4103] mb-4 font-medium uppercase tracking-wide">
+              // What we do //
+            </p>
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-4">
+              <h2 className="text-3xl md:text-[2.5rem] leading-tight font-bold text-[#0D1D2C] font-['Libre_Baskerville'] md:w-1/2">
+                We build the infrastructure <br className="hidden md:block"/>
+                Innovations runs on
+              </h2>
+              <p className="text-gray-500 text-base md:text-lg md:w-5/12 leading-relaxed">
+                From founder development to platform creation, G-iHub is the connective tissue of Africa's innovation economy
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col md:flex-row divide-y-20 md:divide-y-0 md:divide-x divide-gray-100">
+            {/* Column 1 */}
+            <div className="flex-1 p-8 md:p-12 hover:bg-orange-50/30 transition-colors duration-300">
+              <span className="text-[#FF4103] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">01</span>
+              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">Founder Development</h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-8">
+                Structed program from idea through validation, execution and scale. Every founder build on StartupVerse
+              </p>
+              <Link to="/program" className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity">
+                PROGRAM & INCUBATION
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </Link>
             </div>
 
-            <div className="bg-purple-100 border-2 border-purple-200 rounded-2xl px-6 sm:px-8 pt-10 pb-24 sm:pb-8 relative min-h-[639px] overflow-hidden">
-              {/* Title and Icon */}
-              <img src={vector3} className='absolute top-2 left-1/2 transform -translate-x-1/2 w-40 sm:w-48 opacity-50' />
-              <img src={vector3} className='absolute top-10 left-20 w-52 sm:w-80 opacity-50' />
-              <img src={vector3} className='absolute top-2 -left-4 w-60 sm:w-[30rem] opacity-50' />
-              <img src={vector2} className='absolute -bottom-2 -left-4 w-full max-w-[50rem] opacity-50' />
-              <img src={vector2} className='absolute -bottom-24 left-2 w-96 sm:w-[480px] opacity-50' />
-              <img src={vector2} className='absolute -bottom-36 left-8 w-80 sm:w-[400px] opacity-50' />
-              <div className="flex flex-col gap-3 mb-4 z-10 relative">
-                <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
-                  {/* <Zap className="w-5 h-5 text-white" /> */}
-                  <img src={atom} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800">Tech Commercialization</h3>
-              </div>
-
-              {/* Paragraph */}
-              <p className="text-gray-600 text-sm leading-relaxed mb-6 z-10 relative max-w-xl">
-                At G-Hub, we are offering a full customer experience service
-                that focuses on developing and commercializing health-tech
-                products to improve the overall customer experience. Our goal
-                is to create sustainable and profitable business models
-                for better healthcare outcomes.
+            {/* Column 2 */}
+            <div className="flex-1 p-8 md:p-12 hover:bg-gray-50/50 transition-colors duration-300">
+              <span className="text-[#0D1D2C] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">02</span>
+              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">Platform Building</h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-8">
+                We build and operate digital platform serving entire innovation vertical accorss Africal
               </p>
-
-              {/* Responsive Image */}
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 sm:bottom-auto sm:left-[83px] sm:translate-x-0 sm:top-[17rem] w-[350px] sm:w-[440px] h-auto z-0">
-
-                <img src={hey} className="w-full h-auto" />
-              </div>
+              <Link to="/platform" className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity">
+                EXPLORE PLATFORM
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </Link>
             </div>
 
+            {/* Column 3 */}
+            <div className="flex-1 p-8 md:p-12 hover:bg-gray-50/50 transition-colors duration-300">
+              <span className="text-[#0D1D2C] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">03</span>
+              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">Research Science</h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-8">
+                Advancing deep innovation through research program labs, and scientific publication
+              </p>
+              <Link to="/research" className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity">
+                RESEARCH PROGRAMS
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </Link>
+            </div>
+          </div>
+        </section>
 
-            <div className="lg:col-span-2 flex flex-col md:flex-row items-start md:items-center bg-blue-50 border border-blue-200 rounded-2xl px-6 sm:px-8 pt-10 pb-28 md:pb-8 relative min-h-[639px] md:min-h-[400px] overflow-hidden">
-              {/* Text Section */}
-              <img src={vector3} className='absolute top-2 left-1/2 transform -translate-x-1/2 w-40 sm:w-48 opacity-50' />
-              <img src={vector3} className='absolute top-10 left-20 w-52 sm:w-80 opacity-50' />
-              <img src={vector3} className='absolute top-12 -left-4 w-60 sm:w-[30rem] opacity-50' />
-              <img src={vector2} className='absolute -bottom-2 -right-4 w-full max-w-[50rem] opacity-50' />
-              <img src={vector2} className='absolute -bottom-24 right-22 w-96 sm:w-[480px] opacity-50' />
-              <img src={vector2} className='absolute -bottom-36 left-8 w-80 sm:w-[400px] opacity-50' />
-              <div className="flex flex-col gap-3 mb-6 md:mb-0 z-10 relative max-w-xl">
-                <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                  {/* <Users className="w-5 h-5 text-white" /> */}
-                  <img src={gym} />
+        <section data-aos="slide-up" className="mt-20 py-16 bg-white ">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-[#0D1D2C] font-['Libre_Baskerville']">
+              Our Partners
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 md:px-10">
+            {[
+              {
+                icon: (
+                  <Aperture
+                    strokeWidth={1}
+                    fill="#9CA3AF"
+                    className="w-6 h-6 text-transparent"
+                  />
+                ),
+                name: "Designership",
+              },
+              {
+                icon: (
+                  <Component
+                    strokeWidth={1}
+                    fill="#9CA3AF"
+                    className="w-6 h-6 text-transparent"
+                  />
+                ),
+                name: "Designership",
+              },
+              {
+                icon: (
+                  <Command strokeWidth={2} className="w-6 h-6 text-[#9CA3AF]" />
+                ),
+                name: "Designership",
+              },
+              {
+                icon: (
+                  <Hexagon
+                    strokeWidth={0}
+                    fill="#9CA3AF"
+                    className="w-6 h-6 text-[#9CA3AF]"
+                  />
+                ),
+                name: "Designership",
+              },
+            ].map((partner, index) => (
+              <div
+                key={index}
+                className="bg-[#F8F9FA] hover:bg-gray-50 flex items-center justify-center py-8 rounded-md transition-colors cursor-pointer border border-gray-50"
+              >
+                <div className="flex items-center gap-3 text-gray-500">
+                  {partner.icon}
+                  <span className="font-semibold text-gray-600 text-[1rem]">
+                    {partner.name}
+                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">Tech Entrepreneurship</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Our startup incubation program is designed to cultivate innovative
-                  ideas into successful startups, providing the training,
-                  resources, and support needed to navigate the journey from
-                  concept to market-ready products.
+              </div>
+            ))}
+          </div>
+        </section>
+      </section>
+
+      {/* Impact by Number Section */}
+      <section className="bg-[#05151C] py-20 px-4">
+        <div className="max-w-7xl mx-auto text-center" data-aos="fade-up">
+          <p className="text-[#A7D7C8] text-xs sm:text-sm uppercase tracking-[0.2em] mb-4">
+            // Impact by number //
+          </p>
+          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold font-['Libre_Baskerville'] mb-16">
+            Growing the African innovation economy
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 md:gap-y-0 relative">
+            {[
+              { number: "500+", label: "Founders Reached" },
+              { number: "12", label: "Country active" },
+              { number: "4+", label: "Live platform" },
+              { number: "8k+", label: "Active member" }
+            ].map((stat, index) => (
+              <div 
+                key={index} 
+                className={`flex flex-col items-center justify-center relative ${
+                  index !== 3 ? 'md:border-r border-[#13303D]' : ''
+                }`}
+              >
+                <h3 className="text-[#A7D7C8] text-[2.5rem] md:text-5xl lg:text-[3.5rem] font-medium font-['Libre_Baskerville'] mb-3">
+                  {stat.number}
+                </h3>
+                <p className="text-white/90 text-xs sm:text-sm font-light tracking-wide">
+                  {stat.label}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              {/* Image */}
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 md:bottom-10 md:left-auto md:right-8 md:translate-x-0 w-[320px] md:w-[350px] h-auto z-0">
-
-                <img src={girl} className="w-full h-auto" />
-              </div>
+      {/* CTA Section */}
+      <section className="bg-[#F6F5EF] py-24 px-4 md:px-10">
+        <div 
+          data-aos="fade-up" 
+          className="max-w-6xl mx-auto bg-[#FF4103] rounded-[1.5rem] overflow-hidden flex flex-col md:flex-row items-center justify-between relative shadow-xl"
+        >
+          {/* Text Side */}
+          <div className="p-10 md:p-16 lg:p-20 md:w-1/2 z-10 w-full">
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] text-white font-medium mb-6 leading-[1.2]">
+              Ready to build on <br className="hidden md:block" />
+              Africa's infrastructure?
+            </h2>
+            <p className="text-white/90 text-sm md:text-base mb-10 max-w-sm leading-relaxed">
+              Whether you're a founder, researcher, institution, or investor — there's a pathway for you.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link 
+                to="/platform" 
+                className="bg-white text-[#FF4103] hover:bg-gray-50 px-8 py-3 rounded-full font-medium text-sm text-center transition-colors"
+              >
+                View All Platform
+              </Link>
+              <Link 
+                to="/program" 
+                className="border border-white/60 text-white hover:bg-white/10 px-8 py-3 rounded-full font-medium text-sm text-center transition-colors"
+              >
+                View Programs
+              </Link>
             </div>
+          </div>
 
+          {/* Image Side */}
+          <div className="w-full md:w-1/2 flex justify-end items-end relative md:absolute md:right-0 md:bottom-0 h-full pt-10 md:pt-0 pointer-events-none">
+            <img 
+              src={img2} 
+              alt="Platform interfaces mockups" 
+              className="w-full md:w-[90%] lg:w-full h-auto object-cover transform translate-x-4 md:translate-x-12 translate-y-4 md:translate-y-12 md:self-end" 
+            />
           </div>
         </div>
       </section>
-
-      <section data-aos="slide-up" className="rounded-none lg:rounded-3xl md:mx-10 mt-20 px-2 pt-5 mx-auto" >
-        <div className="flex flex-col items-center" >
-          <p className='text-center text-[1.8rem] sm:w-[70%] md:w-[50%] md:leading-12 font-bold mx-auto lg:text-4xl'>Our Courses</p>
-          <p className='md:w-[45%] mt-2 text-center sm:text-[1rem] text-[1rem] text-gray-500'>Presenting Academy, the tech school of the future. We teach you the right skills to be prepared for tomorrow.</p>
-        </div>
-
-        <div className="mx-auto p-3 flex flex-col md:flex-row gap-10 md:gap-4 py-20 max-w-7xl " >
-          {/* <FirstCard /> */}
-          {/* <SecondCard /> */}
-        </div>
-        {/* <Accordion /> */}
-      </section>
-      <div className="pt-14 pb-20 px-4 sm:px-6 md:px-10 bg-gradient-to-b from-white to-orange-50">
-        <div className="sm:max-w-4xl mx-auto text-center">
-
-          {/* Main Heading */}
-          <h1 className="text-4xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-snug sm:leading-tight break-words px-2">
-            Start Learning with {" "}
-            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
-              G-IHUB
-            </span>
-          </h1>
-
-          {/* Subheading */}
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-10 max-w-md sm:max-w-xl mx-auto leading-relaxed px-2">
-            Join thousands of learners advancing their careers in genomics, bioinformatics, and computational biology.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full px-2 sm:px-0">
-            {/* Get Started */}
-            <button onClick={() => { setTheClickedModal("signUp"); }} className="gap-3 bg-gradient-to-br from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500  py-2 cursor-pointer px-4 sm:py-3 sm:px-8 rounded-full text-white shadow-md flex items-center text-[.9rem]">
-              <span>Get Started</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </button>
-
-            {/* Sign In */}
-            <button onClick={() => { setTheClickedModal("login"); }} className=" hover:from-orange-600 hover:to-orange-500  py-2 gap-3 cursor-pointer px-8 sm:py-3 sm:px-8 rounded-full text-black border-[1px] border-gray-400 shadow-md flex items-center text-[.9rem]">
-              <span>Sign In</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
-
-  )
+  );
 }
 
 export default Home
