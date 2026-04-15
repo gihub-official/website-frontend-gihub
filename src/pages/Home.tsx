@@ -11,7 +11,6 @@ import 'aos/dist/aos.css';
 
 
 const Home = () => {
-  const setTheClickedModal = (m: string) => {};
   useEffect(() => {
     AOS.init({
       duration: 500,     // animation duration in ms
@@ -47,9 +46,20 @@ const Home = () => {
     }
   ];
 
+  useEffect(() => {
+      AOS.init({
+        duration: 500,
+        once: true,
+        easing: 'ease-out',
+      });
+    }, []);
+
   return (
     <div className="">
-      <section className="relative flex flex-col items-center pt-32 md:pt-48 pb-0 px-4 md:px-10 mx-2 md:mx-6 md:mt-2 lg:-mt-28 rounded-[2rem] border border-purple-100 shadow-sm bg-gradient-to-b from-[#FFF5F0] via-[#FCF3F5] to-white overflow-hidden">
+      <section
+        data-aos="fade-up"
+        className="relative flex flex-col items-center pt-32 md:pt-48 pb-0 px-4 md:px-10 mx-2 md:mx-6 md:mt-2 lg:-mt-28 rounded-[2rem] border border-purple-100 shadow-sm bg-gradient-to-b from-[#FFF5F0] via-[#FCF3F5] to-white overflow-hidden"
+      >
         {/* Background Decorative Wavy Image - Pushed to the bottom */}
         <div className="text-center text-[2.5rem] sm:text-4xl md:text-5xl lg:text-[4.5rem] mx-auto font-semibold z-10 leading-[1.1] md:leading-[1.1] max-w-5xl text-[#1A1A1A] tracking-[-0.02em]">
           Building Africa's Innovation Eco system{" "}
@@ -66,27 +76,22 @@ const Home = () => {
         </p>
 
         <div className="z-10 flex flex-row items-center justify-center mt-10 gap-4">
-          <button
-            onClick={() => {
-              setTheClickedModal("signUp");
-            }}
-            className="bg-[#FC350B] hover:bg-[#FF6B35] transition-colors duration-300 py-3 px-8 rounded-full text-white shadow-md flex items-center text-[1rem] sm:text-[1rem] font-medium"
-          >
+          <button className="bg-[#FC350B] hover:bg-[#FF6B35] transition-colors duration-300 py-3 px-8 rounded-full text-white shadow-md flex items-center text-[1rem] sm:text-[1rem] font-medium">
             Explore platform
           </button>
         </div>
 
         {/* Wavy Img */}
         <div className="w-full h-auto mt-4 md:mt-8 z-0 flex items-center justify-center">
-          <img 
-            src={img1} 
-            alt="Wavy Abstract" 
-            className="w-[110%] max-w-none md:w-[90%] md:max-w-7xl h-auto object-cover transform translate-y-4 md:translate-y-12" 
+          <img
+            src={img1}
+            alt="Wavy Abstract"
+            className="w-[110%] max-w-none md:w-[90%] md:max-w-7xl h-auto object-cover transform translate-y-4 md:translate-y-12"
           />
         </div>
       </section>
 
-      <section className="bg-[#F6F5EF] ">
+      <section data-aos="slide-up" className="bg-[#F6F5EF] ">
         <section
           data-aos="slide-up"
           className="my-20 max-w-7xl mx-auto bg-[#F6F5EF] px-16 py-10 rounded-2xl"
@@ -127,18 +132,22 @@ const Home = () => {
           </div>
         </section>
 
-        <section data-aos="slide-up" className="my-20 max-w-7xl mx-auto md:px-10 px-4">
+        <section
+          data-aos="slide-up"
+          className="my-20 max-w-7xl mx-auto md:px-10 px-4"
+        >
           <div className="mb-16">
             <p className="text-sm text-[#FF4103] mb-4 font-medium uppercase tracking-wide">
               // What we do //
             </p>
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-4">
               <h2 className="text-3xl md:text-[2.5rem] leading-tight font-bold text-[#0D1D2C] font-['Libre_Baskerville'] md:w-1/2">
-                We build the infrastructure <br className="hidden md:block"/>
+                We build the infrastructure <br className="hidden md:block" />
                 Innovations runs on
               </h2>
               <p className="text-gray-500 text-base md:text-lg md:w-5/12 leading-relaxed">
-                From founder development to platform creation, G-iHub is the connective tissue of Africa's innovation economy
+                From founder development to platform creation, G-iHub is the
+                connective tissue of Africa's innovation economy
               </p>
             </div>
           </div>
@@ -146,40 +155,100 @@ const Home = () => {
           <div className="bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col md:flex-row divide-y-20 md:divide-y-0 md:divide-x divide-gray-100">
             {/* Column 1 */}
             <div className="flex-1 p-8 md:p-12 hover:bg-orange-50/30 transition-colors duration-300">
-              <span className="text-[#FF4103] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">01</span>
-              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">Founder Development</h3>
+              <span className="text-[#FF4103] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">
+                01
+              </span>
+              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">
+                Founder Development
+              </h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-8">
-                Structed program from idea through validation, execution and scale. Every founder build on StartupVerse
+                Structed program from idea through validation, execution and
+                scale. Every founder build on StartupVerse
               </p>
-              <Link to="/program" className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity">
+              <Link
+                to="/program"
+                className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity"
+              >
                 PROGRAM & INCUBATION
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
               </Link>
             </div>
 
             {/* Column 2 */}
             <div className="flex-1 p-8 md:p-12 hover:bg-gray-50/50 transition-colors duration-300">
-              <span className="text-[#0D1D2C] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">02</span>
-              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">Platform Building</h3>
+              <span className="text-[#0D1D2C] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">
+                02
+              </span>
+              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">
+                Platform Building
+              </h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-8">
-                We build and operate digital platform serving entire innovation vertical accorss Africal
+                We build and operate digital platform serving entire innovation
+                vertical accorss Africal
               </p>
-              <Link to="/platform" className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity">
+              <Link
+                to="/platform"
+                className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity"
+              >
                 EXPLORE PLATFORM
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
               </Link>
             </div>
 
             {/* Column 3 */}
             <div className="flex-1 p-8 md:p-12 hover:bg-gray-50/50 transition-colors duration-300">
-              <span className="text-[#0D1D2C] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">03</span>
-              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">Research Science</h3>
+              <span className="text-[#0D1D2C] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">
+                03
+              </span>
+              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">
+                Research Science
+              </h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-8">
-                Advancing deep innovation through research program labs, and scientific publication
+                Advancing deep innovation through research program labs, and
+                scientific publication
               </p>
-              <Link to="/research" className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity">
+              <Link
+                to="/research"
+                className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity"
+              >
                 RESEARCH PROGRAMS
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
               </Link>
             </div>
           </div>
@@ -262,12 +331,12 @@ const Home = () => {
               { number: "500+", label: "Founders Reached" },
               { number: "12", label: "Country active" },
               { number: "4+", label: "Live platform" },
-              { number: "8k+", label: "Active member" }
+              { number: "8k+", label: "Active member" },
             ].map((stat, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`flex flex-col items-center justify-center relative ${
-                  index !== 3 ? 'md:border-r border-[#13303D]' : ''
+                  index !== 3 ? "md:border-r border-[#13303D]" : ""
                 }`}
               >
                 <h3 className="text-[#A7D7C8] text-[2.5rem] md:text-5xl lg:text-[3.5rem] font-medium font-['Libre_Baskerville'] mb-3">
@@ -284,8 +353,8 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="bg-[#F6F5EF] py-24 px-4 md:px-10">
-        <div 
-          data-aos="fade-up" 
+        <div
+          data-aos="fade-up"
           className="max-w-6xl mx-auto bg-[#FF4103] rounded-[1.5rem] overflow-hidden flex flex-col md:flex-row items-center justify-between relative shadow-xl"
         >
           {/* Text Side */}
@@ -295,17 +364,18 @@ const Home = () => {
               Africa's infrastructure?
             </h2>
             <p className="text-white/90 text-sm md:text-base mb-10 max-w-sm leading-relaxed">
-              Whether you're a founder, researcher, institution, or investor — there's a pathway for you.
+              Whether you're a founder, researcher, institution, or investor —
+              there's a pathway for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                to="/platform" 
+              <Link
+                to="/platform"
                 className="bg-white text-[#FF4103] hover:bg-gray-50 px-8 py-3 rounded-full font-medium text-sm text-center transition-colors"
               >
                 View All Platform
               </Link>
-              <Link 
-                to="/program" 
+              <Link
+                to="/program"
                 className="border border-white/60 text-white hover:bg-white/10 px-8 py-3 rounded-full font-medium text-sm text-center transition-colors"
               >
                 View Programs
@@ -315,10 +385,10 @@ const Home = () => {
 
           {/* Image Side */}
           <div className="w-full md:w-1/2 flex justify-end items-end relative md:absolute md:right-0 md:bottom-0 h-full pt-10 md:pt-0 pointer-events-none">
-            <img 
-              src={img2} 
-              alt="Platform interfaces mockups" 
-              className="w-full md:w-[90%] lg:w-full h-auto object-cover transform translate-x-4 md:translate-x-12 translate-y-4 md:translate-y-12 md:self-end" 
+            <img
+              src={img2}
+              alt="Platform interfaces mockups"
+              className="w-full md:w-[90%] lg:w-full h-auto object-cover transform translate-x-4 md:translate-x-12 translate-y-4 md:translate-y-12 md:self-end"
             />
           </div>
         </div>

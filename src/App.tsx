@@ -6,6 +6,7 @@ import About from './pages/About';
 import Program from './pages/Program';
 import Platform from './pages/Platform';
 import Research from './pages/Research';
+import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/program" element={<Program />} />
         <Route path="/platform" element={<Platform />} />
         <Route path="/research" element={<Research />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>

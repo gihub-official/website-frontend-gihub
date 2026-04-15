@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactNode } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Clock, Users, Globe, Check, Send } from 'lucide-react';

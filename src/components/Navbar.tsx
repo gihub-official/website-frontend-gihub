@@ -133,7 +133,7 @@ export default function Navbar() {
               <div className="sm:flex sm:gap-4">
                 <div className="hidden sm:flex gap-3">
                   <Link
-                    to="/login"
+                    to="/contact"
                     className="hidden md:flex items-center justify-center cursor-pointer rounded-full px-6 py-2.5 text-[.8rem] font-medium transition bg-gradient-to-br from-[#FC350B] to-[#FF6B35] text-white hover:bg-orange-400/75"
                   >
                     Get Started
@@ -265,7 +265,7 @@ export default function Navbar() {
 
             <div className="p-6 border-t border-gray-200/50 bg-white/50 space-y-4">
               <Link
-                to="/login"
+                to="/contact"
                 onClick={closeMenu}
                 className="w-full block py-4 px-6 rounded-xl bg-gradient-to-r from-[#FC350B] to-[#FF6B35] text-white font-semibold hover:from-[#FC350B] hover:to-[#FF6B35] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
               >
