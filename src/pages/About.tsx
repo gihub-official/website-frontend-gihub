@@ -36,6 +36,37 @@ const historyData = [
   }
 ];
 
+const teamData = [
+  { name: "Oluwaseyi Olawale", role: "Founder & CEO", img: img1 },
+  { name: "Gloria Adegbola", role: "Director, G-iHUB", img: img2 },
+  { name: "Ayomide Oladele", role: "Lead, Innovation Unit", img: img3 },
+  { name: "Goodness Adewuyi", role: "Software Developer", img: img4 },
+  { name: "Omotolani Afolayan", role: "Software Developer", img: img5 },
+  { name: "George Babalola", role: "Product Designer", img: img6 },
+  { name: "Yakubu Abdulbasit", role: "Fullstack Developer", img: img7 }
+];
+
+const renderPerson = (person: { name: string; role: string; img: string }, globalIdx: number, rowDelayIdx: number) => (
+  <div
+    key={globalIdx}
+    className="flex flex-col group w-full"
+    data-aos="slide-up"
+    data-aos-delay={rowDelayIdx * 100}
+  >
+    <div className="aspect-[4/5] w-full rounded-[1rem] bg-[#FF4103] overflow-hidden mb-5">
+      <img
+        src={person.img}
+        alt={person.name}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+    </div>
+    <h3 className="text-[1rem] md:text-[1.1rem] font-bold text-[#1A1A1A] font-['Libre_Baskerville'] mb-1 text-center">
+      {person.name}
+    </h3>
+    <p className="text-gray-500 text-[0.85rem] text-center w-full">{person.role}</p>
+  </div>
+);
+
 const About = () => {
   const historyContainerRef = React.useRef<HTMLDivElement>(null);
 
@@ -293,51 +324,31 @@ const About = () => {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-8">
-              {[
-                { name: "Oluwaseyi Olawale", role: "Founder & CEO", img: img1 },
-                { name: "Gloria Adegbola", role: "Director G-iHUB", img: img2 },
-                {
-                  name: "Oladele Ayomide",
-                  role: "Software Developer",
-                  img: img3,
-                },
-                { name: "Goodness Adewuyi", role: "Software Developer", img: img4 },
-                {
-                  name: "Omotolani Afolayan",
-                  role: "Software Developer",
-                  img: img5,
-                },
-                {
-                  name: "George Babalola",
-                  role: "Product Designer",
-                  img: img6,
-                },
-                {
-                  name: "Yakubu Abdulbasit",
-                  role: "Fullstack Developer",
-                  img: img7,
-                },
-              ].map((person, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col group"
-                  data-aos="slide-up"
-                  data-aos-delay={(idx % 3) * 100}
-                >
-                  <div className="aspect-[4/5] w-full rounded-[1rem] bg-[#FF4103] overflow-hidden mb-5">
-                    <img
-                      src={person.img}
-                      alt={person.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 className="text-[1rem] md:text-[1.1rem] font-bold text-[#1A1A1A] font-['Libre_Baskerville'] mb-1">
-                    {person.name}
-                  </h3>
-                  <p className="text-gray-500 text-[0.85rem]">{person.role}</p>
+            <div className="flex flex-col gap-y-12 md:gap-y-16">
+              {/* Top Tier - 1 Person */}
+              <div className="grid grid-cols-1 justify-items-center">
+                <div className="w-full max-w-[280px] md:max-w-[320px]">
+                  {renderPerson(teamData[0], 0, 0)}
                 </div>
-              ))}
+              </div>
+              
+              {/* Middle Tier - 2 People */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 lg:gap-16 justify-items-center md:px-16 lg:px-32">
+                {teamData.slice(1, 3).map((person, idx) => (
+                  <div key={idx + 1} className="w-full max-w-[280px] md:max-w-[320px]">
+                    {renderPerson(person, idx + 1, idx)}
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom Tier - 4 People */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 justify-items-center">
+                {teamData.slice(3, 7).map((person, idx) => (
+                  <div key={idx + 3} className="w-full max-w-[280px] md:max-w-[320px]">
+                    {renderPerson(person, idx + 3, idx)}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
