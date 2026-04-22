@@ -93,35 +93,35 @@ const Research = () => {
     <div className="font-sans overflow-hidden min-h-screen">
       
       {/* Focus Areas Section */}
-      <div className="bg-[#F6F5EF] pt-36 pb-24 lg:pb-32">
-        <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-16">
+      <div className="bg-[#F6F5EF] pt-16 pb-24 lg:pb-32">
+        <div className="px-4 md:px-10 lg:px-32">
         
         {/* Header */}
         <div className="text-center mb-16" data-aos="slide-up">
-          <p className="text-[#FF4103] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-4">
+          <p className="text-[#FF4103] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-1.5">
             // Research Focus Areas //
           </p>
-          <h1 className="text-4xl md:text-[3rem] font-bold text-[#0D1D2C] font-['Libre_Baskerville'] leading-tight mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0D1D2C] font-['Fraunces'] leading-tight">
             Where we focus our science.
           </h1>
         </div>
 
         {/* Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {researchData.map((item, idx) => (
             <div 
               key={idx}
-              className="bg-white rounded-xl p-8 md:p-10 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] border border-gray-100/50 flex flex-col hover:-translate-y-1 transition-transform duration-300"
+              className="bg-white rounded-md p-5 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] border border-gray-100/50 flex flex-col hover:-translate-y-1 transition-transform duration-300"
               data-aos="slide-up"
               data-aos-delay={(idx % 3) * 100}
             >
-              <div className="w-12 h-12 rounded-full bg-blue-50 border border-blue-100/50 flex items-center justify-center mb-6">
+              <div className="w-10 h-10 rounded-full bg-blue-50 border border-blue-100/50 flex items-center justify-center mb-6">
                 <Heart className="w-5 h-5 text-blue-500" strokeWidth={2} />
               </div>
-              <h3 className="text-[1.25rem] md:text-[1.35rem] font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4 leading-snug">
+              <h3 className="text-[1.25rem] md:text-xl font-bold text-[#0D1D2C] font-['Fraunces'] mb-4 leading-snug tracking-tighter">
                 {item.title}
               </h3>
-              <p className="text-gray-500 text-[0.95rem] md:text-[0.98rem] leading-relaxed">
+              <p className="text-gray-500 text-[0.95rem] md:text-sm leading-relaxed">
                 {item.desc}
               </p>
             </div>
@@ -135,10 +135,10 @@ const Research = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-16">
           
           <div className="text-center mb-16" data-aos="slide-up">
-            <p className="text-[#FF4103] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-4">
+            <p className="text-[#FF4103] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-1.5">
               // Innovation Labs //
             </p>
-            <h2 className="text-3xl md:text-[2.5rem] font-bold text-[#0D1D2C] font-['Libre_Baskerville'] leading-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0D1D2C] font-['Fraunces'] leading-tight mb-4">
               Where the work gets done
             </h2>
           </div>
@@ -154,7 +154,7 @@ const Research = () => {
                 <div className="mb-4 text-[#FF4103] text-xs md:text-sm font-semibold tracking-[0.1em] uppercase">
                   {lab.tag}
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4 leading-snug">
+                <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Fraunces'] mb-4 leading-snug">
                   {lab.title}
                 </h3>
                 <p className="text-gray-500 text-[0.95rem] md:text-[1rem] leading-relaxed">
@@ -172,10 +172,10 @@ const Research = () => {
         <div className="max-w-5xl mx-auto px-4 md:px-10 lg:px-16">
           
           <div className="text-center mb-16" data-aos="slide-up">
-            <p className="text-[#FF4103] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-4">
+            <p className="text-[#FF4103] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-1.5">
               // Publication //
             </p>
-            <h2 className="text-3xl md:text-[2.5rem] font-bold text-[#0D1D2C] font-['Libre_Baskerville'] leading-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0D1D2C] font-['Fraunces'] leading-tight mb-4">
               Research that informs the ecosystem.
             </h2>
           </div>
@@ -189,18 +189,18 @@ const Research = () => {
                 data-aos-delay={(idx % 4) * 100}
               >
                 <div className="flex-shrink-0">
-                  <div className="bg-[#0D1D2C] text-white text-xs sm:text-sm font-semibold rounded-md px-6 py-2.5 md:mt-1 text-center min-w-[5rem]">
+                  <div className="bg-[#0D1D2C] text-white text-xs sm:text-sm font-semibold rounded-md px-6 py-2.5 md:mt-1 text-center min-w-[5rem] font-['Fraunces']">
                     {pub.year}
                   </div>
                 </div>
                 <div className="flex flex-col flex-1">
-                  <h3 className="text-[1.3rem] md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-3 leading-snug">
+                  <h3 className="text-[1.3rem] md:text-2xl font-bold text-[#0D1D2C] font-['Fraunces'] mb-3 leading-snug">
                     {pub.title}
                   </h3>
                   <p className="text-gray-500 text-[0.95rem] md:text-[1rem] leading-relaxed mb-6">
                     {pub.desc}
                   </p>
-                  <span className="text-[#FF4103] text-xs font-bold tracking-[0.1em] uppercase mt-auto">
+                  <span className="text-[#FF4103] text-xs font-medium tracking-[1px] uppercase mt-auto">
                     {pub.tag}
                   </span>
                 </div>

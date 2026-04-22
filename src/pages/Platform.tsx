@@ -91,7 +91,7 @@ const Platform = () => {
   }, []);
 
   return (
-    <div className="font-['Inter'] overflow-hidden bg-[#F6F5EF] min-h-screen pt-16 pb-24 lg:pb-32">
+    <div className="font-['Inter'] overflow-hidden bg-[#F6F5EF] min-h-screen pt-16 pb-24">
       <div className="px-4 md:px-10 lg:px-32">
         
         {/* Header */}
@@ -109,7 +109,7 @@ const Platform = () => {
           
           {/* StartupVerse */}
           <div 
-            className="md:col-span-3 bg-[#FF4103] rounded-xl p-8 md:p-12 lg:p-8 flex flex-col justify-center min-h-35 md:min-h-40"
+            className="md:col-span-3 bg-[#FF4103] rounded-xl p-8 md:p-12 lg:p-10 flex flex-col justify-center min-h-35 md:min-h-45"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -122,7 +122,7 @@ const Platform = () => {
 
           {/* OmicsBoard */}
           <div 
-            className="md:col-span-2 bg-[#05151C] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-35 md:min-h-40"
+            className="md:col-span-2 bg-[#05151C] rounded-xl p-8 md:p-12 lg:p-10 flex flex-col justify-center min-h-35 md:min-h-45"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -135,7 +135,7 @@ const Platform = () => {
 
           {/* Certifyer */}
           <div 
-            className="md:col-span-2 bg-[#14325a] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-35 md:min-h-40"
+            className="md:col-span-2 bg-[#14325a] rounded-xl p-8 md:p-12 lg:p-8 flex flex-col justify-center min-h-35 md:min-h-45"
             data-aos="fade-up"
             data-aos-delay="300"
           >
@@ -148,7 +148,7 @@ const Platform = () => {
 
           {/* Healthmania */}
           <div 
-            className="md:col-span-3 bg-[#FF6a33] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-35 md:min-h-40"
+            className="md:col-span-3 bg-[#FF6a33] rounded-xl p-8 md:p-12 lg:p-8 flex flex-col justify-center min-h-35 md:min-h-45"
             data-aos="fade-up"
             data-aos-delay="400"
           >
@@ -166,14 +166,14 @@ const Platform = () => {
           {platformsData.map((platform, idx) => (
             <div 
               key={platform.id}
-              className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}
+              className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-starter`}
             >
               {/* Visual Placeholder Side */}
               <div 
                 className="w-full lg:w-1/2"
                 data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
               >
-                <div className={`w-full aspect-[4/3] rounded-2xl ${platform.imageBg} shadow-sm overflow-hidden flex flex-col items-center justify-center text-center p-8`}>
+                <div className={`w-full aspect-4/3 rounded-2xl ${platform.imageBg} shadow-sm overflow-hidden flex flex-col items-center justify-center text-center p-8`}>
                   <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white font-['Fraunces'] leading-tight whitespace-pre-line mb-6">
                     {platform.imageTitle}
                   </h3>
@@ -188,7 +188,7 @@ const Platform = () => {
                 className="w-full lg:w-1/2"
                 data-aos={idx % 2 === 0 ? "fade-left" : "fade-right"}
               >
-                <div className="inline-block border border-[#FF4103]/20 bg-[#FF4103]/5 text-[#FF4103] text-xs font-semibold px-4 py-1.5 rounded-full mb-5">
+                <div className="inline-block border border-[#FF4103]/20 bg-[#FF4103]/5 text-[#FF4103] text-xs font-medium px-4 py-1.5 rounded-full mb-5">
                   {platform.tag}
                 </div>
                 
@@ -196,15 +196,15 @@ const Platform = () => {
                   {platform.title}
                 </h2>
                 
-                <p className="text-gray-600 text-[0.95rem] md:text-[1.05rem] leading-relaxed mb-4">
+                <p className="text-gray-600 text-[0.95rem] md:text-base leading-relaxed mb-4">
                   {platform.desc1}
                 </p>
-                <p className="text-gray-600 text-[0.95rem] md:text-[1.05rem] leading-relaxed mb-8">
+                <p className="text-gray-600 text-[0.95rem] md:text-base leading-relaxed mb-4">
                   {platform.desc2}
                 </p>
 
                 {/* Pills */}
-                <div className="flex flex-wrap gap-2 md:gap-3 mb-8">
+                <div className="flex flex-wrap gap-2 md:gap-3 mb-6">
                   {platform.pills.map(pill => (
                     <span key={pill} className="bg-[#FF4103]/10 text-[#0D1D2C] text-xs font-medium px-3.5 py-1.5 rounded-full">
                       {pill}
@@ -213,17 +213,17 @@ const Platform = () => {
                 </div>
 
                 {/* Bullets */}
-                <ul className="space-y-4 mb-10">
+                <ul className="space-y-4 mb-6">
                   {platform.bullets.map((bullet, i) => (
                     <li key={i} className="flex items-start gap-3 text-gray-600 text-[0.95rem] md:text-[1rem]">
-                      <div className="mt-1.5 min-w-[6px] h-[6px] rounded-full bg-[#0D1D2C]"></div>
-                      <span className="leading-relaxed">{bullet}</span>
+                      <div className="mt-1.5 min-w-2 h-2 rounded-full bg-[#0D1D2C]"></div>
+                      <span className="leading-relaxed text-sm">{bullet}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* CTA Button */}
-                <button className="bg-[#FF4103] hover:bg-[#E53900] text-white px-6 py-3.5 rounded-full font-medium inline-flex items-center gap-3 transition-colors shadow-sm">
+                <button className="bg-[#FF4103] cursor-pointer  hover:bg-[#E53900] text-white px-6 py-3.5 rounded-full font-medium inline-flex items-center gap-3 transition-colors shadow-sm">
                   {platform.ctaText}
                   <span className="bg-white text-[#FF4103] rounded-full w-5 h-5 flex items-center justify-center shadow-sm">
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
