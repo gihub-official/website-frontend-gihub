@@ -91,71 +91,71 @@ const Platform = () => {
   }, []);
 
   return (
-    <div className="font-sans overflow-hidden bg-[#F6F5EF] min-h-screen pt-36 pb-24 lg:pb-32">
-      <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-16">
+    <div className="font-['Inter'] overflow-hidden bg-[#F6F5EF] min-h-screen pt-16 pb-24 lg:pb-32">
+      <div className="px-4 md:px-10 lg:px-32">
         
         {/* Header */}
-        <div className="text-center mb-16" data-aos="slide-up">
-          <p className="text-[#FF4103] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-4">
+        <div className="text-center mb-8 md:mb-16" data-aos="slide-up">
+          <p className="text-[#FF4103] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-1.5">
             // Platform overview //
           </p>
-          <h1 className="text-4xl md:text-[3rem] font-bold text-[#0D1D2C] font-['Libre_Baskerville'] leading-tight mb-4">
+          <h1 className="text-3xl md:text-5xl font-semibold text-[#0D1D2C] font-['Fraunces'] leading-tight">
             Four platforms. One vision.
           </h1>
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 mb-16 md:mb-32">
           
           {/* StartupVerse */}
           <div 
-            className="md:col-span-3 bg-[#FF4103] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-[300px] md:min-h-[350px]"
+            className="md:col-span-3 bg-[#FF4103] rounded-xl p-8 md:p-12 lg:p-8 flex flex-col justify-center min-h-35 md:min-h-40"
             data-aos="fade-up"
             data-aos-delay="100"
           >
             <div className="flex flex-col justify-center h-full">
-              <div className="text-4xl lg:text-5xl mb-6">🚀</div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white font-['Libre_Baskerville'] mb-3">StartupVerse</h2>
-              <p className="text-white/80 text-[1rem] md:text-[1.1rem]">Execution Engine For Founders</p>
+              <div className="text-3xl lg:text-4xl mb-2 md:mb-6">🚀</div>
+              <h2 className="text-3xl md:text-4xl font-semibold text-white font-['Fraunces'] mb-2">StartupVerse</h2>
+              <p className="text-white text-[1rem] md:text-base leading-6">Execution Engine For Founders</p>
             </div>
           </div>
 
           {/* OmicsBoard */}
           <div 
-            className="md:col-span-2 bg-[#05151C] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-[300px] md:min-h-[350px]"
+            className="md:col-span-2 bg-[#05151C] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-35 md:min-h-40"
             data-aos="fade-up"
             data-aos-delay="200"
           >
             <div className="flex flex-col justify-center h-full">
-              <div className="text-4xl lg:text-5xl mb-6">🔬</div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white font-['Libre_Baskerville'] mb-3">OmicsBoard</h2>
-              <p className="text-white/80 text-[1rem] md:text-[1.1rem]">Research & Genomics Platform</p>
+              <div className="text-3xl lg:text-4xl mb-2 md:mb-6">🔬</div>
+              <h2 className="text-3xl md:text-4xl font-semibold text-white font-['Fraunces'] mb-2">OmicsBoard</h2>
+              <p className="text-white text-[1rem] md:text-base">Research & Genomics Platform</p>
             </div>
           </div>
 
           {/* Certifyer */}
           <div 
-            className="md:col-span-2 bg-[#14325a] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-[300px] md:min-h-[350px]"
+            className="md:col-span-2 bg-[#14325a] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-35 md:min-h-40"
             data-aos="fade-up"
             data-aos-delay="300"
           >
             <div className="flex flex-col justify-center h-full">
-              <div className="text-4xl lg:text-5xl mb-6">🥇</div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white font-['Libre_Baskerville'] mb-3">Certifyer</h2>
-              <p className="text-white/80 text-[1rem] md:text-[1.1rem]">Digital Credential Infrastructure</p>
+              <div className="text-3xl lg:text-4xl mb-2 md:mb-6">🥇</div>
+              <h2 className="text-3xl md:text-4xl font-semibold text-white font-['Fraunces'] mb-2">Certifyer</h2>
+              <p className="text-white text-[1rem] md:text-base">Digital Credential Infrastructure</p>
             </div>
           </div>
 
           {/* Healthmania */}
           <div 
-            className="md:col-span-3 bg-[#FF6a33] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-[300px] md:min-h-[350px]"
+            className="md:col-span-3 bg-[#FF6a33] rounded-xl p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-35 md:min-h-40"
             data-aos="fade-up"
             data-aos-delay="400"
           >
             <div className="flex flex-col justify-center h-full">
-              <div className="text-4xl lg:text-5xl mb-6">❤️</div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white font-['Libre_Baskerville'] mb-3">Healthmania</h2>
-              <p className="text-white/80 text-[1rem] md:text-[1.1rem]">Digital Health Innovation</p>
+              <div className="text-3xl lg:text-4xl mb-2 md:mb-6">❤️</div>
+              <h2 className="text-3xl md:text-4xl font-semibold text-white font-['Fraunces'] mb-2">Healthmania</h2>
+              <p className="text-white text-[1rem] md:text-base">Digital Health Innovation</p>
             </div>
           </div>
 
@@ -174,7 +174,7 @@ const Platform = () => {
                 data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
               >
                 <div className={`w-full aspect-[4/3] rounded-2xl ${platform.imageBg} shadow-sm overflow-hidden flex flex-col items-center justify-center text-center p-8`}>
-                  <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white font-['Libre_Baskerville'] leading-tight whitespace-pre-line mb-6">
+                  <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white font-['Fraunces'] leading-tight whitespace-pre-line mb-6">
                     {platform.imageTitle}
                   </h3>
                   <p className="text-white/80 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase">
@@ -192,7 +192,7 @@ const Platform = () => {
                   {platform.tag}
                 </div>
                 
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0D1D2C] font-['Fraunces'] mb-6">
                   {platform.title}
                 </h2>
                 

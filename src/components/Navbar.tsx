@@ -19,7 +19,10 @@ export default function Navbar() {
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
+    if (
+      navbarRef.current &&
+      !navbarRef.current.contains(event.target as Node)
+    ) {
       closeMenu();
     }
   };
@@ -44,7 +47,7 @@ export default function Navbar() {
       ([entry]) => {
         setIsStuck(!entry.isIntersecting);
       },
-      { threshold: 0 }
+      { threshold: 0 },
     );
 
     if (sentinelRef.current) observer.observe(sentinelRef.current);
@@ -60,23 +63,23 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <div>
-      <div ref={sentinelRef} className="h-[1px] w-full"></div>
+    <div className="">
+      <div ref={sentinelRef} className="h-px w-full"></div>
 
       <header
         id="my-header"
         ref={navbarRef}
-        className={`fixed border-2 w-full top-0 left-0 z-50 transition-all duration-300 ${
+        className={`relative w-full top-0 left-0 z-50 transition-all duration-300  ${
           isScrolled
-            ? "bg-white/80 backdrop-blur-md border-[1px] border-gray-200/50 shadow-lg"
-            : "border-[1px] border-gray-200 bg-[#FFFFFF] shadow-3xs "
-        } lg:sticky lg:top-0 ${
+            ? "bg-white/80 backdrop-blur-md border border-gray-200/50 shadow-lg lg:fixed"
+            : "border border-gray-200 bg-[#FFFFFF] shadow-3xs "
+        }  lg:top-0 ${
           isStuck
             ? "lg:w-full lg:rounded-none shadow-md"
-            : "lg:w-[89%] lg:mx-auto lg:my-10 lg:rounded-3xl"
+            : "lg:w-[89%] lg:mx-auto lg:my-10 lg:rounded-xl "
         }`}
       >
-        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 px-2">
+        <div className="mx-auto max-w-5xl sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="relative md:flex md:items-center md:gap-12 text-black">
               <div>
@@ -92,7 +95,7 @@ export default function Navbar() {
                   <li>
                     <Link
                       to="/program"
-                      className="transition hover:text-gray-500/75"
+                      className="transition hover:text-orange-500/75"
                       onClick={closeMenu}
                     >
                       Program
@@ -101,7 +104,7 @@ export default function Navbar() {
                   <li>
                     <Link
                       to="/platform"
-                      className="transition hover:text-gray-500/75"
+                      className="transition hover:text-orange-500/75"
                       onClick={closeMenu}
                     >
                       Platform
@@ -110,7 +113,7 @@ export default function Navbar() {
                   <li>
                     <Link
                       to="/research"
-                      className="transition hover:text-gray-500/75"
+                      className="transition hover:text-orange-500/75"
                       onClick={closeMenu}
                     >
                       Research
@@ -119,7 +122,7 @@ export default function Navbar() {
                   <li>
                     <Link
                       to="/about"
-                      className="transition hover:text-gray-500/75"
+                      className="transition hover:text-orange-500/75"
                       onClick={closeMenu}
                     >
                       About
@@ -134,7 +137,7 @@ export default function Navbar() {
                 <div className="hidden sm:flex gap-3">
                   <Link
                     to="/contact"
-                    className="hidden md:flex items-center justify-center cursor-pointer rounded-full px-6 py-2.5 text-[.8rem] font-medium transition bg-gradient-to-br from-[#FC350B] to-[#FF6B35] text-white hover:bg-orange-400/75"
+                    className="hidden md:flex items-center justify-center cursor-pointer rounded-full px-6 py-2.5 text-[.8rem] font-medium transition bg-linear-to-br from-[#FC350B] to-[#FF6B35] text-white hover:bg-orange-400/75"
                   >
                     Get Started
                   </Link>
@@ -176,7 +179,7 @@ export default function Navbar() {
         }`}
       >
         <div
-          className={`absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60 backdrop-blur-md transition-all duration-500 ${
+          className={`absolute inset-0 bg-linear-to-br from-black/60 via-black/40 to-black/60 backdrop-blur-md transition-all duration-500 ${
             isOpen ? "opacity-100" : "opacity-0"
           }`}
           onClick={closeMenu}
@@ -188,7 +191,7 @@ export default function Navbar() {
           }`}
         >
           <div className="flex flex-col h-full relative">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FC350B] to-[#FF6B35]"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-[#FC350B] to-[#FF6B35]"></div>
 
             <nav className="flex-1 px-4 pt-28">
               <ul className="space-y-3">
@@ -231,7 +234,7 @@ export default function Navbar() {
                     <Link
                       to={to}
                       onClick={closeMenu}
-                      className="group flex items-center gap-4 p-4 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 hover:text-orange-600 transition-all duration-300 border border-transparent hover:border-orange-200/50"
+                      className="group flex items-center gap-4 p-4 rounded-xl text-gray-700 hover:bg-linear-to-r hover:from-orange-50 hover:to-orange-100 hover:text-orange-600 transition-all duration-300 border border-transparent hover:border-orange-200/50"
                     >
                       <div className="w-10 h-10 rounded-lg bg-gray-100 group-hover:bg-orange-100 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                         <span className="text-xl">{icon}</span>
@@ -267,7 +270,7 @@ export default function Navbar() {
               <Link
                 to="/contact"
                 onClick={closeMenu}
-                className="w-full block py-4 px-6 rounded-xl bg-gradient-to-r from-[#FC350B] to-[#FF6B35] text-white font-semibold hover:from-[#FC350B] hover:to-[#FF6B35] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
+                className="w-full block py-4 px-6 rounded-xl bg-linear-to-r from-[#FC350B] to-[#FF6B35] text-white font-semibold hover:from-[#FC350B] hover:to-[#FF6B35] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span className="flex items-center justify-center gap-2">
                   <svg

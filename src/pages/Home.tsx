@@ -1,69 +1,82 @@
-import { Link } from 'react-router-dom';
-import img1 from "../assets/image1.png";
-import img2 from "../assets/image2.png";
-import { Aperture, Component, Command, Hexagon } from 'lucide-react';
+import { Link } from "react-router-dom";
+import img1 from "../assets/hero-img.svg";
+import img2 from "../assets/image2.svg";
+import img3 from "../assets/texture.svg";
+import { Aperture, Component, Command, Hexagon } from "lucide-react";
 import PlatformCard from "../components/PlatformCard";
-import AOS from "aos"
-import { useEffect } from 'react';
-import 'aos/dist/aos.css';
-
-
-
+import AOS from "aos";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
 
 const Home = () => {
   useEffect(() => {
     AOS.init({
-      duration: 500,     // animation duration in ms
-      once: true,        // whether animation should happen only once
+      duration: 500, // animation duration in ms
+      once: true, // whether animation should happen only once
       offset: 20,
-    })
-  }, [])
+    });
+  }, []);
 
   const platforms = [
     {
       title: "StartupVerse",
-      description: "The digital startup ecosystem where the other 90% of founders turn ideas into real startups with zero execution gaps.",
+      description:
+        "The digital startup ecosystem where the other 90% of founders turn ideas into real startups with zero execution gaps.",
       linkText: "View platform",
       linkUrl: "https://startupverse.app",
     },
     {
       title: "OmicsBoard",
-      description: "Empowering life science researchers with intuitive bioinformatics and data analytics tools.",
+      description:
+        "Empowering life science researchers with intuitive bioinformatics and data analytics tools.",
       linkText: "View platform",
       linkUrl: "https://omicsboard.com",
     },
     {
       title: "Certifyer",
-      description: "A secure digital credentialing platform for modern educational and professional institutions.",
+      description:
+        "A secure digital credentialing platform for modern educational and professional institutions.",
       linkText: "View platform",
       linkUrl: "https://certifyer.online",
     },
     {
       title: "Healthmania",
-      description: "Advancing digital health technologies to improve patient outcomes across the continent.",
+      description:
+        "Advancing digital health technologies to improve patient outcomes across the continent.",
       linkText: "View platform",
       linkUrl: "https://healthmania.app",
-    }
+    },
   ];
 
   useEffect(() => {
-      AOS.init({
-        duration: 500,
-        once: true,
-        easing: 'ease-out',
-      });
-    }, []);
+    AOS.init({
+      duration: 500,
+      once: true,
+      easing: "ease-out",
+    });
+  }, []);
 
   return (
-    <div className="">
+    <div>
       <section
         data-aos="fade-up"
-        className="relative flex flex-col items-center pt-32 md:pt-48 pb-0 px-4 md:px-10 mx-2 md:mx-6 md:mt-2 lg:-mt-28 rounded-[2rem] border border-purple-100 shadow-sm bg-gradient-to-b from-[#FFF5F0] via-[#FCF3F5] to-white overflow-hidden"
+        className="relative flex flex-col items-center pt-24 pb-4 md:pt-48 px-4 md:px-10 mx-2 md:mx-6 md:mt-2 lg:-mt-28 rounded-4xl border border-[#C0A9FF] shadow-sm bg-linear-to-br from-[#f7e6e9] via-[#f3d7dc] to-[#f9ecef] overflow-hidden md:h-[180vh]"
       >
+        {/* <img src={img3} alt="" className='absolute w-full h-full border top-0 bg-repeat' /> */}
+        <div
+          className="w-full h-full absolute top-0"
+          style={{
+            backgroundImage: `url(${img3})`,
+            backgroundRepeat: "repeat",
+          }}
+        ></div>
+        <div className="absolute inset-0 inset-y-80 -bottom-10 bg-[radial-gradient(circle_at_80%_50%,rgba(246,193,184,0.6),transparent_40%)]"></div>
+        <div className="absolute  w-full h-1/2 bottom-10 bg-[background:radial-gradient(circle_at_80%_50%,rgba(254,217,232,1))]"></div>
+
         {/* Background Decorative Wavy Image - Pushed to the bottom */}
-        <div className="text-center text-[2.5rem] sm:text-4xl md:text-5xl lg:text-[4.5rem] mx-auto font-semibold z-10 leading-[1.1] md:leading-[1.1] max-w-5xl text-[#1A1A1A] tracking-[-0.02em]">
-          Building Africa's Innovation Eco system{" "}
-          <span className="font-light font-['Libre_Baskerville'] italic text-[2.5rem] sm:text-3xl md:text-5xl lg:text-[4.5rem]">
+        <div className="text-center text-[2.5rem] sm:text-4xl md:text-5xl lg:text-[4rem] mx-auto font-semibold z-10 leading-[1.1] md:leading-[1.1] max-w-5xl text-[#1A1A1A] tracking-[-0.02em]">
+          Building Africa's Innovation Eco <br />system{" "}
+          <span className="font-light font-['Instrument_Serif'] italic text-[2.5rem] sm:text-3xl md:text-5xl lg:text-[4.5rem]">
             Empower{" "}
           </span>
           Your Team
@@ -82,83 +95,92 @@ const Home = () => {
         </div>
 
         {/* Wavy Img */}
-        <div className="w-full h-auto mt-4 md:mt-8 z-0 flex items-center justify-center">
+        <div className="hidden w-full h-auto mt-4 md:mt-8 z-0 md:flex items-center justify-center">
           <img
             src={img1}
             alt="Wavy Abstract"
-            className="w-[110%] max-w-none md:w-[90%] md:max-w-7xl h-auto object-cover transform translate-y-4 md:translate-y-12"
+            className="w-[110%] max-w-none md:w-full h-auto object-cover transform translate-y-4 md:translate-y-12 absolute bottom-5"
           />
         </div>
       </section>
 
-      <section data-aos="slide-up" className="bg-[#F6F5EF] ">
-        <section
-          data-aos="slide-up"
-          className="my-20 max-w-7xl mx-auto bg-[#F6F5EF] px-16 py-10 rounded-2xl"
-        >
-          <p className="px-4 text-sm text-[#FF4103] ">
-            // Ecosystem Platform //
-          </p>
-
-          <div className="flex flex-row items-center justify-between mt-10 mx-auto px-2 md:px-4">
-            <div className="text-md md:text-3xl w-1/2">
-              <p>Four Platform</p>
-              <p>One Ecosystem.</p>
-            </div>
-            <div className="text-xs md:text-md max-w-md w-1/2">
-              <p>
-                Each platform solves a specific infrastructure problem for
-                African innovators.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section
-          data-aos="slide-up"
-          className="rounded-none lg:rounded-3xl md:mx-10 mt-20 px-2 pt-5 mx-auto max-w-7xl bg-[#F6F5EF] "
-        >
-          <div className="flex flex-col items-center justify-center mx-auto gap-10">
-            {platforms.map((platform, index) => (
-              <PlatformCard
-                key={index}
-                title={platform.title}
-                description={platform.description}
-                linkText={platform.linkText}
-                linkUrl={platform.linkUrl}
-                isReversed={index % 2 !== 0}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section
-          data-aos="slide-up"
-          className="my-20 max-w-7xl mx-auto md:px-10 px-4"
-        >
-          <div className="mb-16">
-            <p className="text-sm text-[#FF4103] mb-4 font-medium uppercase tracking-wide">
-              // What we do //
+      <section
+        data-aos="slide-up"
+        className="bg-[#F6F5EF]">
+        <section className="md:px-16">
+          <section
+            data-aos="slide-up"
+            className="-my-6 max-w-7xl mx-auto py-10 rounded-2xl"
+          >
+            <p className="px-4 text-sm text-orange-500">
+              <span className="italic">//</span> Ecosystem Platform{" "}
+              <span className="italic">//</span>
             </p>
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-4">
-              <h2 className="text-3xl md:text-[2.5rem] leading-tight font-bold text-[#0D1D2C] font-['Libre_Baskerville'] md:w-1/2">
+
+            <div className="flex flex-row items-end justify-between mt-6 mx-auto px-2 md:px-4">
+              <div
+                className="text-md md:text-5xl leading-15 tracking-tight w-1/2"
+                style={{ fontFamily: "Fraunces" }}
+              >
+                <p>Four Platform</p>
+                <p>One Ecosystem.</p>
+              </div>
+              <div className="text-xs md:text-[16px] leading-7 max-w-md w-1/2 text-[#767676]">
+                <p>
+                  Each platform solves a specific infrastructure problem for
+                  African innovators.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section
+            data-aos="slide-up"
+            className="rounded-none lg:rounded-2xl mt-10 px-2 pt-5 mx-auto max-w-7xl bg-[#F6F5EF]"
+          >
+            <div className="flex flex-col items-center justify-center mx-auto gap-10">
+              {platforms.map((platform, index) => (
+                <PlatformCard
+                  key={index}
+                  title={platform.title}
+                  description={platform.description}
+                  linkText={platform.linkText}
+                  linkUrl={platform.linkUrl}
+                  isReversed={index % 2 !== 0}
+                />
+              ))}
+            </div>
+          </section>
+        </section>
+
+        <section
+          data-aos="slide-up"
+          className="mt-20 max-w-7xl mx-auto md:px-16 px-4 bg-white py-10"
+        >
+          <div className="mb-10">
+            <p className="text-sm text-orange-500 mb-4">
+              <span className="italic">//</span> What we do <span className="italic">//</span>
+            </p>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-4">
+              <h2 className="text-3xl md:text-[2.5rem] leading-15 font-bold text-[#0D1D2C] md:w-1/2"
+              style={{fontFamily: "Fraunces"}}>
                 We build the infrastructure <br className="hidden md:block" />
                 Innovations runs on
               </h2>
-              <p className="text-gray-500 text-base md:text-lg md:w-5/12 leading-relaxed">
+              <p className="text-gray-500 text-base md:text-[16px] md:w-5/12 leading-relaxed">
                 From founder development to platform creation, G-iHub is the
                 connective tissue of Africa's innovation economy
               </p>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col md:flex-row divide-y-20 md:divide-y-0 md:divide-x divide-gray-100">
+          <div className="bg-white rounded-2xl shadow-[inset_0_10px_25px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.06)] flex flex-col md:flex-row divide-y-20 md:divide-y-0 md:divide-x divide-gray-100">
             {/* Column 1 */}
-            <div className="flex-1 p-8 md:p-12 hover:bg-orange-50/30 transition-colors duration-300">
-              <span className="text-[#FF4103] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">
+            <div className="flex-1 p-8 md:p-12 hover:bg-gray-50/50 transition-colors duration-300">
+              <span className="text-[#FF4103] font-['Fraunces'] text-2xl md:text-3xl mb-6 block">
                 01
               </span>
-              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold text-[#0D1D2C] font-['Fraunces'] mb-4">
                 Founder Development
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-8">
@@ -167,7 +189,7 @@ const Home = () => {
               </p>
               <Link
                 to="/program"
-                className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity"
+                className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-medium uppercase tracking-wider hover:opacity-80 transition-opacity"
               >
                 PROGRAM & INCUBATION
                 <svg
@@ -188,10 +210,10 @@ const Home = () => {
 
             {/* Column 2 */}
             <div className="flex-1 p-8 md:p-12 hover:bg-gray-50/50 transition-colors duration-300">
-              <span className="text-[#0D1D2C] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">
+              <span className="text-[#0D1D2C] font-['Fraunces'] text-2xl md:text-3xl mb-6 block">
                 02
               </span>
-              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold text-[#0D1D2C] font-['Fraunces'] mb-4">
                 Platform Building
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-8">
@@ -200,7 +222,7 @@ const Home = () => {
               </p>
               <Link
                 to="/platform"
-                className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity"
+                className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-medium uppercase tracking-wider hover:opacity-80 transition-opacity"
               >
                 EXPLORE PLATFORM
                 <svg
@@ -221,10 +243,10 @@ const Home = () => {
 
             {/* Column 3 */}
             <div className="flex-1 p-8 md:p-12 hover:bg-gray-50/50 transition-colors duration-300">
-              <span className="text-[#0D1D2C] font-['Libre_Baskerville'] text-2xl md:text-3xl mb-6 block">
+              <span className="text-[#0D1D2C] font-['Fraunces'] text-2xl md:text-3xl mb-6 block">
                 03
               </span>
-              <h3 className="text-xl md:text-2xl font-bold text-[#0D1D2C] font-['Libre_Baskerville'] mb-4">
+              <h3 className="text-xl md:text-2xl font-semibold text-[#0D1D2C] font-['Fraunces'] mb-4">
                 Research Science
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-8">
@@ -233,7 +255,7 @@ const Home = () => {
               </p>
               <Link
                 to="/research"
-                className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-bold uppercase tracking-wider hover:opacity-80 transition-opacity"
+                className="inline-flex items-center gap-2 text-[#FF4103] text-xs font-medium uppercase tracking-wider hover:opacity-80 transition-opacity"
               >
                 RESEARCH PROGRAMS
                 <svg
@@ -254,14 +276,14 @@ const Home = () => {
           </div>
         </section>
 
-        <section data-aos="slide-up" className="mt-20 py-16 bg-white ">
+        <section data-aos="slide-up" className="mt-0 py-16 bg-white md:px-16">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-[#0D1D2C] font-['Libre_Baskerville']">
+            <h2 className="text-4xl font-bold text-[#0D1D2C] font-['Fraunces']">
               Our Partners
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 md:px-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
             {[
               {
                 icon: (
@@ -317,16 +339,16 @@ const Home = () => {
       </section>
 
       {/* Impact by Number Section */}
-      <section className="bg-[#05151C] py-20 px-4">
+      <section className="bg-[#05151C] py-20 px-16">
         <div className="max-w-7xl mx-auto text-center" data-aos="fade-up">
           <p className="text-[#A7D7C8] text-xs sm:text-sm uppercase tracking-[0.2em] mb-4">
-            // Impact by number //
+            <span className="italic">//</span> Impact by number <span className="italic">//</span>
           </p>
-          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-bold font-['Libre_Baskerville'] mb-16">
+          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold font-['Fraunces'] mb-16">
             Growing the African innovation economy
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 md:gap-y-0 relative">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-y-0 relative">
             {[
               { number: "500+", label: "Founders Reached" },
               { number: "12", label: "Country active" },
@@ -339,7 +361,7 @@ const Home = () => {
                   index !== 3 ? "md:border-r border-[#13303D]" : ""
                 }`}
               >
-                <h3 className="text-[#A7D7C8] text-[2.5rem] md:text-5xl lg:text-[3.5rem] font-medium font-['Libre_Baskerville'] mb-3">
+                <h3 className="text-[#A7D7C8] text-[2.5rem] md:text-5xl lg:text-[3rem] font-medium font-['Fraunces'] mb-3">
                   {stat.number}
                 </h3>
                 <p className="text-white/90 text-xs sm:text-sm font-light tracking-wide">
@@ -352,14 +374,14 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#F6F5EF] py-24 px-4 md:px-10">
+      <section className="bg-[#F6F5EF] py-24 px-4 md:px-16">
         <div
           data-aos="fade-up"
-          className="max-w-6xl mx-auto bg-[#FF4103] rounded-[1.5rem] overflow-hidden flex flex-col md:flex-row items-center justify-between relative shadow-xl"
+          className="max-w-6xl mx-auto bg-[#FF4103] rounded-4xl overflow-hidden flex flex-col md:flex-row items-center justify-between relative shadow-xl"
         >
           {/* Text Side */}
-          <div className="p-10 md:p-16 lg:p-20 md:w-1/2 z-10 w-full">
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] text-white font-medium mb-6 leading-[1.2]">
+          <div className="p-10 md:p-16 lg:px-20 lg:py-20 md:w-1/2 z-10 w-full">
+            <h2 className="text-3xl md:text-4xl text-white font-medium mb-4 leading-12">
               Ready to build on <br className="hidden md:block" />
               Africa's infrastructure?
             </h2>
@@ -395,6 +417,6 @@ const Home = () => {
       </section>
     </div>
   );
-}
+};
 
-export default Home
+export default Home;

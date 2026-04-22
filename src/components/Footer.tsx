@@ -2,8 +2,8 @@ import logo from "../assets/logoTop.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0C0C0C] text-white pt-24 pb-12 mt-10">
-      <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-[#0C0C0C] text-white pt-24 pb-12">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 mb-16 lg:mb-20">
@@ -67,7 +67,7 @@ export default function Footer() {
         {/* Bottom Section - Divider & Copyright */}
         <div className="border-t border-white/[0.08] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[0.8rem] text-[#8c8c8c]">
-            © 2026 Genomac Innovation Hub. A Genomac Holdings company.
+            © {new Date().getFullYear()} Genomac Innovation Hub. A Genomac Holdings company.
           </p>
 
           <div className="flex items-center gap-8">

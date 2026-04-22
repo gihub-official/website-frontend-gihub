@@ -20,7 +20,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
     <div className={`flex flex-col w-full bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
       {/* Text Section - Left/Right Side */}
       <div className="w-full md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
-        <h3 className="text-2xl md:text-3xl font-bold text-[#0D1D2C] mb-6 my-20 font-['Libre_Baskerville']">
+        <h3 className="text-2xl md:text-3xl font-medium text-[#0D1D2C] mb-6 my-20 font-['Fraunces']">
           {title}
         </h3>
         
@@ -39,11 +39,11 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
       </div>
 
       {/* Image Section Placeholder - Right Side */}
-      <div className="w-full md:w-1/2 bg-[#EAEAEA] min-h-[300px] md:min-h-full flex items-center justify-center">
+      <div className="w-full md:w-1/2 bg-[#EAEAEA] min-h-75 md:min-h-full flex items-center justify-center">
         {/* Placeholder Graphic */}
         <div className="flex items-center gap-2 text-[#D1D5DB]">
           <div className="w-8 h-8 rounded-full bg-current"></div>
-          <div className="w-0 h-0 border-l-[16px] border-l-transparent border-b-[32px] border-b-current border-r-[16px] border-r-transparent"></div>
+          <div className="w-0 h-0 border-l-16 border-l-transparent border-b-32 border-b-current border-r-16 border-r-transparent"></div>
           <div className="w-8 h-8 bg-current"></div>
         </div>
       </div>
