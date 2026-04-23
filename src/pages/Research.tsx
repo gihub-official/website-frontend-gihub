@@ -188,7 +188,7 @@ const Research = () => {
                 data-aos="fade-up"
                 data-aos-delay={(idx % 4) * 100}
               >
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <div className="bg-[#0D1D2C] text-white text-xs sm:text-sm font-semibold rounded-md px-6 py-2.5 md:mt-1 text-center min-w-[5rem] font-['Fraunces']">
                     {pub.year}
                   </div>
