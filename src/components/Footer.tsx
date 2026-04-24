@@ -86,7 +86,7 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Platforms Links */}
+          {/* Platforms Links Don't forget to add */}
           <div>
             <h3 className="text-sm font-semibold text-white mb-6 uppercase tracking-wider">
               PLATFORMS
