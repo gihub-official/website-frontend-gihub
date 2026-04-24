@@ -10,6 +10,10 @@ import img4 from "../assets/Team/img4.png";
 import img5 from "../assets/Team/img5.png";
 import img6 from "../assets/Team/img6.png";
 import img7 from "../assets/Team/img7.png";
+import flake from "../assets/flake.svg";
+import flake2 from "../assets/flake2.svg";
+import cone from "../assets/cone.svg";
+import cone2 from "../assets/cone2.svg";
 
 import { TrendingUp, Shield } from "lucide-react";
 import gsap from "gsap";
@@ -57,17 +61,19 @@ const renderPerson = (
     data-aos="slide-up"
     data-aos-delay={rowDelayIdx * 100}
   >
-    <div className="aspect-[4/5] w-full rounded-[1rem] bg-[#FF4103] overflow-hidden mb-5">
+    <div className="aspect-4/5 w-full rounded-xl bg-[#FF4103] overflow-hidden relative mb-2">
       <img
         src={person.img}
         alt={person.name}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        className="w-full absolute z-10 h-full object-cover bg-transparent transition-transform duration-500 group-hover:scale-105"
       />
+      <img src={flake} alt="" className="absolute z-0 right-0" />
+      <img src={cone} alt="" className="absolute z-0 left-0 top-30" />
     </div>
-    <h3 className="text-[1rem] md:text-[1.1rem] font-bold text-[#1A1A1A] font-['Fraunces'] mb-1 text-center">
+    <h3 className="text-[1rem] md:text-base font-bold text-[#1A1A1A] font-['Fraunces'] text-center">
       {person.name}
     </h3>
-    <p className="text-gray-500 text-[0.85rem] text-center w-full">
+    <p className="text-gray-500 text-[0.85rem] font-[] text-center w-full">
       {person.role}
     </p>
   </div>
@@ -213,18 +219,17 @@ const About = () => {
               data-aos="slide-up"
               data-aos-delay="100"
             >
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#FFEEE7] rounded-full flex items-center justify-center">
                 <TrendingUp
                   className="w-6 h-6 text-[#FF4103]"
                   strokeWidth={2.5}
                 />
               </div>
-              <div>
-                {" "}
+              <div className="space-y-3">
                 <p className="text-white/90 text-xs font-semibold tracking-[0.15em] uppercase">
                   Our Mission
                 </p>
-                <h3 className="text-2xl md:text-[1.75rem] font-medium text-white font-['Fraunces'] leading-snug lg:pr-10">
+                <h3 className="text-2xl md:text-xl font-medium text-white font-['Fraunces'] leading-snug lg:pr-10">
                   To build the infrastructure that powers African innovation
                 </h3>
                 <p className="text-white/80 text-[1rem] md:text-[1.1rem] leading-relaxed">
@@ -237,24 +242,27 @@ const About = () => {
 
             {/* Vision Card */}
             <div
-              className="bg-[#05151C] rounded-lg p-10 md:p-14 shadow"
+              className="bg-[#05151C] rounded-lg p-10 md:py-5 md:px-8 shadow flex flex-col gap-6"
               data-aos="slide-up"
               data-aos-delay="200"
             >
-              <div className="w-14 h-14 bg-[#F6F5EF] rounded-full flex items-center justify-center mb-12">
+              <div className="w-12 h-12 bg-[#FFEEE7] rounded-full flex items-center justify-center">
                 <Shield className="w-6 h-6 text-[#05151C]" strokeWidth={2} />
               </div>
-              <p className="text-white/80 text-sm font-semibold tracking-[0.15em] uppercase mb-5">
-                Our Vision
-              </p>
-              <h3 className="text-2xl md:text-[1.75rem] font-medium text-white font-['Fraunces'] leading-snug mb-5 lg:pr-10">
-                A self-sustaining African innovation economy
-              </h3>
-              <p className="text-gray-400 text-[1rem] md:text-[1.1rem] leading-relaxed">
-                We envision a Pan-African ecosystem where every serious
-                innovator has access to the tools, programs, and networks needed
-                to build lasting impact — regardless of where they start.
-              </p>
+              <div className="space-y-3">
+                <p className="text-white/80 text-xs font-semibold tracking-[0.15em] uppercase">
+                  Our Vision
+                </p>
+                <h3 className="text-2xl md:text-xl font-medium text-white font-['Fraunces'] leading-snug lg:pr-10">
+                  A self-sustaining African innovation <br /> economy
+                </h3>
+                <p className="text-gray-400 text-[1rem] md:text-[1.1rem] leading-relaxed">
+                  We envision a Pan-African ecosystem where every serious
+                  innovator has access to the tools, programs, and networks
+                  needed to build lasting impact — regardless of where they
+                  start.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -272,7 +280,7 @@ const About = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: "🔁",
@@ -307,7 +315,7 @@ const About = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-xl p-8 md:p-10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.02)] border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+                className="bg-white rounded-md p-8 md:p-5 shadow-xs border border-gray-100"
                 data-aos="slide-up"
                 data-aos-delay={(idx % 3) * 100}
               >
@@ -332,14 +340,14 @@ const About = () => {
               // Leadership //
             </p>
             <h2 className="text-3xl md:text-[2.5rem] font-bold text-[#0D1D2C] font-['Fraunces'] mb-4">
-              The team behind G-iHub
+              The Team Behind G-iHub
             </h2>
           </div>
 
           <div className="flex flex-col gap-y-12 md:gap-y-16">
             {/* Top Tier - 1 Person */}
             <div className="grid grid-cols-1 justify-items-center">
-              <div className="w-full max-w-[280px] md:max-w-[320px]">
+              <div className="w-full max-w-70 md:max-w-80">
                 {renderPerson(teamData[0], 0, 0)}
               </div>
             </div>
@@ -347,10 +355,7 @@ const About = () => {
             {/* Middle Tier - 2 People */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 lg:gap-16 justify-items-center md:px-16 lg:px-32">
               {teamData.slice(1, 3).map((person, idx) => (
-                <div
-                  key={idx + 1}
-                  className="w-full max-w-[280px] md:max-w-[320px]"
-                >
+                <div key={idx + 1} className="w-full max-w-70 md:max-w-80">
                   {renderPerson(person, idx + 1, idx)}
                 </div>
               ))}
@@ -359,10 +364,7 @@ const About = () => {
             {/* Bottom Tier - 4 People */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 justify-items-center">
               {teamData.slice(3, 7).map((person, idx) => (
-                <div
-                  key={idx + 3}
-                  className="w-full max-w-[280px] md:max-w-[320px]"
-                >
+                <div key={idx + 3} className="w-full max-w-70 md:max-w-80">
                   {renderPerson(person, idx + 3, idx)}
                 </div>
               ))}
@@ -373,9 +375,9 @@ const About = () => {
 
       {/* History Section */}
       <div className="bg-[#F6F5EF] py-20 lg:py-32" ref={historyContainerRef}>
-        <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-16">
+        <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-16 relative overflow-hidden">
           <div className="text-center mb-16" data-aos="slide-up">
-            <p className="text-[#FF4103] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-4">
+            <p className="text-[#FF4103] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-1.5">
               // Our history //
             </p>
             <h2 className="text-3xl md:text-[2.5rem] font-bold text-[#0D1D2C] font-['Fraunces'] mb-4">
@@ -395,9 +397,9 @@ const About = () => {
                 className="history-card w-full origin-top"
                 style={{ zIndex: idx * 10 }}
               >
-                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 bg-[#F6F5EF] p-8 md:p-14 rounded-[2rem] shadow-[0_-15px_40px_-15px_rgba(0,0,0,0.06)] border border-white/40">
+                <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20 bg-[#F6F5EF] p-8 md:p-8 rounded-4xl shadow-2xl border border-white/40">
                   {/* Timeline Copy */}
-                  <div className="w-full lg:w-1/2 lg:pl-6">
+                  <div className="w-full lg:w-1/2 lg:pl-6 mt-10">
                     <p className="text-[#FF4103] text-sm md:text-[0.95rem] font-semibold tracking-wider mb-3">
                       {item.year}
                     </p>
@@ -410,8 +412,8 @@ const About = () => {
                   </div>
 
                   {/* Placeholder Visual */}
-                  <div className="w-full lg:w-1/2 flex lg:justify-end">
-                    <div className="w-full max-w-md aspect-[4/5] bg-gray-200/60 rounded-xl flex items-center justify-center border border-gray-100">
+                  <div className="w-full lg:w-1/2 hidden md:flex lg:justify-end">
+                    <div className="w-full max-w-md aspect-4/5 bg-gray-200/60 rounded-xl flex items-center justify-center border border-gray-100">
                       <div className="flex items-center justify-center gap-3 opacity-15">
                         <div className="w-10 h-10 rounded-full bg-black"></div>
                         <div
@@ -432,63 +434,64 @@ const About = () => {
       </div>
 
       {/* Genomac Holdings Section */}
-      <div className="relative bg-[#FF4103] mt-20 py-20 lg:py-32 overflow-hidden">
+      <div className="relative bg-[#FF4103] py-20 lg:py-28 lg:px-30 overflow-hidden">
         {/* Subtle background circles */}
-        <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-white/[0.03] rounded-full translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 md:w-[35rem] md:h-[35rem] bg-black/[0.03] rounded-full -translate-x-1/3 translate-y-1/3"></div>
+        {/* <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-white/3 rounded-full translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 md:w-140 md:h-140 bg-black/3 rounded-full -translate-x-1/3 translate-y-1/3"></div> */}
 
-        <div className="relative max-w-7xl mx-auto px-4 md:px-10 lg:px-16 z-10">
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
-            {/* Left Column: Text Content */}
-            <div className="w-full lg:w-1/2" data-aos="fade-right">
-              <p className="text-white/90 text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase mb-4">
-                Our Parent
-              </p>
-              <h2 className="text-3xl sm:text-4xl md:text-[3rem] font-bold text-white font-['Fraunces'] leading-[1.1] mb-6">
-                Genomac Holdings
-              </h2>
+        <img src={flake2} alt="" className="absolute bottom-4 left-0 w-2/12" />
+        <img src={cone2} alt="" className="absolute right-0 top-0 w-2/12" />
 
-              <p className="text-white text-[1rem] leading-relaxed mb-6 max-w-xl">
-                G-iHub is the innovation arm of Genomac Holdings, a Pan-African
-                holding company operating across health, technology, and
-                science. Genomac Holdings provides G-iHub with institutional
-                backing, infrastructure, and long-term strategic support.
-              </p>
-              <p className="text-white text-[1rem] leading-relaxed max-w-xl">
-                From first-time founders to deep research scientists, G-iHub
-                creates structured pathways that connect talent with tools,
-                community, and capital.
-              </p>
-            </div>
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+          {/* Left Column: Text Content */}
+          <div className="w-full lg:w-1/2" data-aos="fade-right">
+            <p className="text-white/90 text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase mb-4">
+              Our Parent
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-[3rem] font-bold text-white font-['Fraunces'] leading-[1.1] mb-6">
+              Genomac Holdings
+            </h2>
 
-            {/* Right Column: Glass / Border Card */}
-            <div className="w-full lg:w-1/2" data-aos="fade-left">
-              <div className="bg-white/5 rounded-2xl border border-white/20 p-8 md:p-12 lg:p-14 backdrop-blur-sm">
-                {/* Row 1 */}
-                <div className="border-b border-white/20 pb-5 mb-5">
-                  <h4 className="text-[1.25rem] md:text-[1.4rem] font-['Fraunces'] text-white mb-2">
-                    Relationship
-                  </h4>
-                  <p className="text-white/80 text-[0.95rem]">
-                    Innovation & Venture Building Arm.
-                  </p>
-                </div>
-                {/* Row 2 */}
-                <div className="border-b border-white/20 pb-5 mb-5">
-                  <h4 className="text-[1.25rem] md:text-[1.4rem] font-['Fraunces'] text-white mb-2">
-                    Founded
-                  </h4>
-                  <p className="text-white/80 text-[0.95rem]">2018</p>
-                </div>
-                {/* Row 3 */}
-                <div>
-                  <h4 className="text-[1.25rem] md:text-[1.4rem] font-['Fraunces'] text-white mb-2">
-                    Headquarters
-                  </h4>
-                  <p className="text-white/80 text-[0.95rem]">
-                    Ogbomoso, Oyo state.
-                  </p>
-                </div>
+            <p className="text-white text-[1rem] leading-relaxed mb-6 max-w-xl">
+              G-iHub is the innovation arm of Genomac Holdings, a Pan-African
+              holding company operating across health, technology, and science.
+              Genomac Holdings provides G-iHub with institutional backing,
+              infrastructure, and long-term strategic support.
+            </p>
+            <p className="text-white text-[1rem] leading-relaxed max-w-xl">
+              From first-time founders to deep research scientists, G-iHub
+              creates structured pathways that connect talent with tools,
+              community, and capital.
+            </p>
+          </div>
+
+          {/* Right Column: Glass / Border Card */}
+          <div className="w-full lg:w-1/2" data-aos="fade-left">
+            <div className="bg-white/5 rounded-2xl border border-white/20 p-5 backdrop-blur-sm relative">
+              {/* Row 1 */}
+              <div className="border-b border-white/20 pb-5 mb-5">
+                <h4 className="text-[1.25rem] md:text-[1.4rem] font-['Fraunces'] text-white mb-2">
+                  Relationship
+                </h4>
+                <p className="text-white/80 text-[0.95rem]">
+                  Innovation & Venture Building Arm.
+                </p>
+              </div>
+              {/* Row 2 */}
+              <div className="border-b border-white/20 pb-5 mb-5">
+                <h4 className="text-[1.25rem] md:text-[1.4rem] font-['Fraunces'] text-white mb-2">
+                  Founded
+                </h4>
+                <p className="text-white/80 text-[0.95rem]">2018</p>
+              </div>
+              {/* Row 3 */}
+              <div>
+                <h4 className="text-[1.25rem] md:text-[1.4rem] font-['Fraunces'] text-white mb-2">
+                  Headquarters
+                </h4>
+                <p className="text-white/80 text-[0.95rem]">
+                  Ogbomoso, Oyo state.
+                </p>
               </div>
             </div>
           </div>
