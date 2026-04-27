@@ -93,7 +93,7 @@ export default function Footer() {
             </h3>
             <nav className="flex flex-col space-y-4 text-[0.85rem]">
               <a
-                href="https://startupverse.app"
+                href="https://startupverse.space"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#8c8c8c] hover:text-white transition-colors"
