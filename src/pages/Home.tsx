@@ -89,7 +89,7 @@ const Home = () => {
         </p>
 
         <div className="z-10 flex flex-row items-center justify-center mt-10 gap-4">
-          <button className="bg-[#FC350B] hover:bg-[#FF6B35] transition-colors duration-300 py-3 px-8 rounded-full text-white shadow-md flex items-center text-[1rem] sm:text-[1rem] font-medium">
+          <button className="bg-[#FC350B] cursor-pointer hover:bg-[#FF6B35] transition-colors duration-300 py-3 px-8 rounded-full text-white shadow-md flex items-center text-[1rem] sm:text-[1rem] font-medium">
             Explore platform
           </button>
         </div>
@@ -122,7 +122,7 @@ const Home = () => {
                 className="text-md md:text-5xl leading-15 tracking-tight w-1/2"
                 style={{ fontFamily: "Fraunces" }}
               >
-                <p>Four Platform</p>
+                <p>Four Platforms</p>
                 <p>One Ecosystem.</p>
               </div>
               <div className="text-xs md:text-[16px] leading-7 max-w-md w-1/2 text-[#767676]">
