@@ -271,7 +271,7 @@ const Program = () => {
 
               {/* Action Button */}
               <div>
-                <button className="inline-flex cursor-pointer items-center gap-3 bg-[#FF4103] hover:bg-[#E03A00] text-white px-7 py-3 rounded-full font-medium transition-colors group text-[0.95rem]">
+                <button className="inline-flex items-center gap-3 bg-[#FF4103] hover:bg-[#E03A00] text-white px-7 py-3 rounded-full font-medium transition-colors group text-[0.95rem]">
                   Apply Now
                   <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center transform group-hover:translate-x-1 transition-transform">
                     <Send className="w-3 h-3 text-[#FF4103] -ml-0.5 mt-0.5" />

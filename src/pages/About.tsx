@@ -219,7 +219,7 @@ const About = () => {
               data-aos="slide-up"
               data-aos-delay="100"
             >
-              <div className="w-12 h-12 bg-[#FFEEE7] rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
                 <TrendingUp
                   className="w-6 h-6 text-[#FF4103]"
                   strokeWidth={2.5}
@@ -315,7 +315,7 @@ const About = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-md p-8 md:p-5 shadow-xs border border-gray-100"
+                className="bg-white rounded-xl p-8 md:p-10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.02)] border border-gray-100 transition-all duration-300 hover:-translate-y-1"
                 data-aos="slide-up"
                 data-aos-delay={(idx % 3) * 100}
               >
