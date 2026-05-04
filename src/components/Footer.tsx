@@ -164,21 +164,6 @@ export default function Footer() {
         {/* Bottom Section - Divider & Copyright */}
         <div className="border-t border-white/[0.08] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[0.8rem] text-[#8c8c8c]">
-<<<<<<< HEAD
-            © {new Date().getFullYear()} Genomac Innovation Hub. A Genomac Holdings company.
-          </p>
-
-          <div className="flex items-center gap-8">
-            <a href="/terms" className="text-[0.8rem] text-[#8c8c8c] hover:text-white transition-colors">Terms of Service</a>
-            <a href="/privacy" className="text-[0.8rem] text-[#8c8c8c] hover:text-white transition-colors">Privacy Policy</a>
-          </div>
-        </div>
-
-      </div>
-    </footer>
-  );
-}
-=======
             © {new Date().getFullYear()} Genomac Innovation Hub. A Genomac
             Holdings company.
           </p>
@@ -202,4 +187,3 @@ export default function Footer() {
     </footer>
   );
 }
->>>>>>> origin/master
