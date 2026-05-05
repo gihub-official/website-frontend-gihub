@@ -12,7 +12,11 @@ import useUserDetail from "../tanstack/useUserDetail";
 import { useLocation } from "react-router-dom";
 import useHandleModal from "../zustard/useHandleModal";
 import useLogout from "../tanstack/useLogout";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
+gsap.registerPlugin(ScrollTrigger);
 
 
 
@@ -45,6 +49,43 @@ const Home = () => {
 
   const navbarRef = useRef<HTMLDivElement>(null);
   const sentinelRef = useRef<HTMLDivElement>(null);
+
+  const platformsContainerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const cards = gsap.utils.toArray<HTMLElement>(".platform-card-wrapper");
+
+      // Refresh ScrollTrigger after AOS animations settle
+      setTimeout(() => ScrollTrigger.refresh(), 500);
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: platformsContainerRef.current,
+          start: "top 120px",
+          end: `+=${cards.length * 100}%`,
+          pin: true,
+          scrub: true,
+        }
+      });
+
+      cards.forEach((card, index) => {
+        // Fade out the current card to reveal the next one underneath
+        if (index < cards.length - 1) {
+          tl.to(card, {
+            opacity: 0,
+            duration: 1,
+            ease: "none"
+          }, index);
+        }
+      });
+
+      return () => {
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+      };
+    },
+    { scope: platformsContainerRef, dependencies: [] },
+  );
 
   const { setTheClickedModal } = useHandleModal();
   const { pathname } = useLocation();
@@ -215,7 +256,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section data-aos="slide-up" className="bg-[#F6F5EF]">
+      {/* Ecosystem Section */}
+
+      <section data-aos="slide-up" className="bg-[#F6F5EF] mt-16" ref={platformsContainerRef}>
         <section className="md:px-16">
           <section
             data-aos="slide-up"
@@ -231,7 +274,7 @@ const Home = () => {
                 className="text-md md:text-5xl leading-15 tracking-tight w-1/2"
                 style={{ fontFamily: "Fraunces" }}
               >
-                <p>Four Platform</p>
+                <p>Four Platforms,</p>
                 <p>One Ecosystem.</p>
               </div>
               <div className="text-xs md:text-[16px] leading-7 max-w-md w-1/2 text-[#767676]">
@@ -247,16 +290,21 @@ const Home = () => {
             data-aos="slide-up"
             className="rounded-none lg:rounded-2xl mt-10 px-2 pt-5 mx-auto max-w-7xl bg-[#F6F5EF]"
           >
-            <div className="flex flex-col items-center justify-center mx-auto gap-10">
+            <div className="grid w-full platforms-timeline-wrapper">
               {platforms.map((platform, index) => (
-                <PlatformCard
+                <div
                   key={index}
-                  title={platform.title}
-                  description={platform.description}
-                  linkText={platform.linkText}
-                  linkUrl={platform.linkUrl}
-                  isReversed={index % 2 !== 0}
-                />
+                  className="platform-card-wrapper w-full col-start-1 row-start-1"
+                  style={{ zIndex: platforms.length - index }}
+                >
+                  <PlatformCard
+                    title={platform.title}
+                    description={platform.description}
+                    linkText={platform.linkText}
+                    linkUrl={platform.linkUrl}
+                    isReversed={index % 2 !== 0}
+                  />
+                </div>
               ))}
             </div>
           </section>
