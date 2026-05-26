@@ -6,14 +6,14 @@ interface VideoData {
   _id: string;
   title: string;
   description: string;
-  thumbnailUrl: string;
-  videoUrl: string;
-  isAvailable: boolean;
+  thumbnailUrl?: string;
+  videoUrl?: string;
+  isAvailable?: boolean;
   createdAt: string;
   updatedAt: string;
   courseSection: number;
-  videoS3Key: string;
-  thumbnailS3Key: string;
+  videoS3Key?: string;
+  thumbnailS3Key?: string;
   __v: number;
 }
 
@@ -69,6 +69,10 @@ const MyLearning = () => {
     }
   }, [selectedVideo, videos]);
 
+  const selectedVideoSrc = selectedVideo
+    ? resolveMediaUrl(selectedVideo.videoUrl, selectedVideo.videoS3Key)
+    : "";
+
   const toggleSection = (sectionNumber: number) => {
     setOpenSections((prev) => ({
       ...prev,
@@ -87,20 +91,25 @@ const MyLearning = () => {
       <div className="col-span-9 overflow-y-auto h-screen ">
         {selectedVideo ? (
           <>
-            <video
-              src={resolveMediaUrl(
-                selectedVideo.videoUrl,
-                selectedVideo.videoS3Key,
-              )}
-              controls
-              controlsList="nodownload"
-              onContextMenu={(e) => e.preventDefault()}
-              className="w-full h-[500px] bg-black aspect-video mb-6"
-              poster={resolveMediaUrl(
-                selectedVideo.thumbnailUrl,
-                selectedVideo.thumbnailS3Key,
-              )}
-            />
+            {selectedVideoSrc ? (
+              <video
+                key={selectedVideoSrc}
+                src={selectedVideoSrc}
+                controls
+                controlsList="nodownload"
+                onContextMenu={(e) => e.preventDefault()}
+                onError={() =>
+                  console.error("Video failed to load", selectedVideoSrc)
+                }
+                className="w-full h-[500px] bg-black aspect-video mb-6"
+                poster={resolveMediaUrl(
+                  selectedVideo.thumbnailUrl,
+                  selectedVideo.thumbnailS3Key,
+                )}
+              />
+            ) : (
+              <div className="w-full h-[500px] bg-black mb-6" />
+            )}
             <div className="p-6 bg-white min-h-[80vh] rounded-lg m-4">
               <h2 className="text-2xl font-extrabold text-gray-900 mb-3 tracking-wide capitalize">
                 {selectedVideo.title}
