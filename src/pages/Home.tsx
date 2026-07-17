@@ -6,24 +6,15 @@ import startupverseImg from "../assets/startupverse.jpeg";
 import certifyerImg from "../assets/certifyer.png";
 import { Aperture, Component, Command, Hexagon } from "lucide-react";
 import PlatformCard from "../components/PlatformCard";
-import AOS from "aos";
 import { useEffect, useRef } from "react";
-import "aos/dist/aos.css";
 import { useState } from "react";
 import useUserDetail from "../tanstack/useUserDetail";
 import { useLocation } from "react-router-dom";
 import useHandleModal from "../zustard/useHandleModal";
 import useLogout from "../tanstack/useLogout";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
-
-
 
 const healthmaniaLogoSymbol = (
-  <div className="flex flex-col items-center justify-center text-white select-none animate-pulse">
+  <div className="flex flex-col items-center justify-center text-white select-none">
     <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-2xl relative overflow-hidden group">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2),transparent_60%)]" />
       <span className="text-5xl font-bold tracking-tight text-white font-sans drop-shadow-md">
@@ -51,7 +42,6 @@ const omicsboardLogoSymbol = (
 );
 
 const Home = () => {
-
   const [openNav, setOpenNav] = useState(false);
   let hoverTimeout: ReturnType<typeof setTimeout> | null = null;
 
@@ -79,49 +69,6 @@ const Home = () => {
 
   const navbarRef = useRef<HTMLDivElement>(null);
   const sentinelRef = useRef<HTMLDivElement>(null);
-
-  const platformsContainerRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      const cards = gsap.utils.toArray<HTMLElement>(".platform-card-wrapper");
-
-      // Refresh ScrollTrigger after AOS animations settle
-      setTimeout(() => ScrollTrigger.refresh(), 500);
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: platformsContainerRef.current,
-          start: "top 80px",
-          end: `+=${cards.length * 100}%`,
-          pin: true,
-          scrub: true,
-        }
-      });
-
-      cards.forEach((card, index) => {
-        // Fade out the current card to reveal the next one underneath
-        // We hold the card opacity at 1 for the first 0.5 of its scroll phase, then fade it to 0 in the remaining 0.5
-        if (index < cards.length - 1) {
-          tl.to(card, {
-            opacity: 1,
-            duration: 0.5,
-            ease: "none"
-          }, index);
-          tl.to(card, {
-            opacity: 0,
-            duration: 0.5,
-            ease: "none"
-          }, index + 0.5);
-        }
-      });
-
-      return () => {
-        ScrollTrigger.getAll().forEach((t) => t.kill());
-      };
-    },
-    { scope: platformsContainerRef, dependencies: [] },
-  );
 
   const { setTheClickedModal } = useHandleModal();
   const { pathname } = useLocation();
@@ -189,14 +136,6 @@ const Home = () => {
     };
   }, [openNav]);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 500, // animation duration in ms
-      once: true, // whether animation should happen only once
-      offset: 20,
-    });
-  }, []);
-
   const platforms = [
     {
       title: "StartupVerse",
@@ -236,18 +175,9 @@ const Home = () => {
     },
   ];
 
-  useEffect(() => {
-    AOS.init({
-      duration: 500,
-      once: true,
-      easing: "ease-out",
-    });
-  }, []);
-
   return (
     <div>
       <section
-        data-aos="fade-up"
         className="relative flex flex-col items-center pt-24 pb-4 md:pt-48 px-4 md:px-10 mx-2 md:mx-6 md:mt-2 lg:-mt-28 rounded-4xl border border-[#C0A9FF] shadow-sm bg-linear-to-br from-[#f7e6e9] via-[#f3d7dc] to-[#f9ecef] overflow-hidden md:h-[180vh]"
       >
         {/* <img src={img3} alt="" className='absolute w-full h-full border top-0 bg-repeat' /> */}
@@ -305,7 +235,6 @@ const Home = () => {
       <section className="bg-[#F6F5EF] mt-16">
         <section className="md:px-16">
           <section
-            data-aos="slide-up"
             className="-my-6 max-w-7xl mx-auto py-10 rounded-2xl"
           >
             <p className="px-4 text-sm text-orange-500">
@@ -331,34 +260,27 @@ const Home = () => {
           </section>
 
           <section
-            ref={platformsContainerRef}
             className="rounded-none lg:rounded-2xl mt-10 px-2 pt-5 mx-auto max-w-7xl bg-[#F6F5EF]"
           >
-            <div className="grid w-full platforms-timeline-wrapper">
+            <div className="flex flex-col items-center justify-center mx-auto gap-10">
               {platforms.map((platform, index) => (
-                <div
+                <PlatformCard
                   key={index}
-                  className="platform-card-wrapper w-full col-start-1 row-start-1"
-                  style={{ zIndex: platforms.length - index }}
-                >
-                  <PlatformCard
-                    title={platform.title}
-                    description={platform.description}
-                    linkText={platform.linkText}
-                    linkUrl={platform.linkUrl}
-                    isReversed={index % 2 !== 0}
-                    image={platform.image}
-                    logoSymbol={platform.logoSymbol}
-                    bgGradient={platform.bgGradient}
-                  />
-                </div>
+                  title={platform.title}
+                  description={platform.description}
+                  linkText={platform.linkText}
+                  linkUrl={platform.linkUrl}
+                  isReversed={index % 2 !== 0}
+                  image={platform.image}
+                  logoSymbol={platform.logoSymbol}
+                  bgGradient={platform.bgGradient}
+                />
               ))}
             </div>
           </section>
         </section>
 
         <section
-          data-aos="slide-up"
           className="mt-20 max-w-7xl mx-auto md:px-16 px-4 bg-white py-10"
         >
           <div className="mb-10">
@@ -483,7 +405,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section data-aos="slide-up" className="mt-0 py-16 bg-white md:px-16">
+        <section className="mt-0 py-16 bg-white md:px-16">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-bold text-[#0D1D2C] font-['Fraunces']">
               Our Partners
@@ -547,7 +469,7 @@ const Home = () => {
 
       {/* Impact by Number Section */}
       <section className="bg-[#05151C] py-20 px-16">
-        <div className="max-w-7xl mx-auto text-center" data-aos="fade-up">
+        <div className="max-w-7xl mx-auto text-center">
           <p className="text-[#A7D7C8] text-xs sm:text-sm uppercase tracking-[0.2em] mb-4">
             <span className="italic">//</span> Impact by number{" "}
             <span className="italic">//</span>
@@ -584,7 +506,6 @@ const Home = () => {
       {/* CTA Section */}
       <section className="bg-[#F6F5EF] py-24 px-4 md:px-16">
         <div
-          data-aos="fade-up"
           className="max-w-6xl mx-auto bg-[#FF4103] rounded-4xl overflow-hidden flex flex-col md:flex-row items-center justify-between relative shadow-xl"
         >
           {/* Text Side */}

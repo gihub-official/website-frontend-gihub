@@ -1,6 +1,36 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import startupverseImg from '../assets/startupverse.jpeg';
+import certifyerImg from '../assets/certifyer.png';
+
+const healthmaniaLogoSymbol = (
+  <div className="flex flex-col items-center justify-center text-white select-none">
+    <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-2xl relative overflow-hidden group">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2),transparent_60%)]" />
+      <span className="text-5xl font-bold tracking-tight text-white font-sans drop-shadow-md">
+        H
+      </span>
+    </div>
+    <span className="mt-4 text-xs font-semibold tracking-widest uppercase text-white/70">
+      Healthmania
+    </span>
+  </div>
+);
+
+const omicsboardLogoSymbol = (
+  <div className="flex flex-col items-center justify-center text-white select-none">
+    <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-2xl relative overflow-hidden group">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2),transparent_60%)]" />
+      <span className="text-5xl font-bold tracking-tight text-white font-sans drop-shadow-md">
+        O
+      </span>
+    </div>
+    <span className="mt-4 text-xs font-semibold tracking-widest uppercase text-white/70">
+      OmicsBoard
+    </span>
+  </div>
+);
 
 const platformsData = [
   {
@@ -18,9 +48,8 @@ const platformsData = [
       "Integration with all G-iHub programs and incubation"
     ],
     ctaText: "Get Access to StartupVerse",
-    imageBg: "bg-[#FF4103]",
-    imageTitle: "Startup\nVerse",
-    imageSub: "EXECUTION PLATFORM"
+    image: startupverseImg,
+    bgGradient: "from-indigo-900 via-slate-900 to-indigo-950",
   },
   {
     id: "omicsboard",
@@ -37,9 +66,8 @@ const platformsData = [
       "Institutional dashboard for university research programs"
     ],
     ctaText: "Request OmicsBoard Access",
-    imageBg: "bg-[#05151C]",
-    imageTitle: "OmicsBoard",
-    imageSub: "RESEARCH PLATFORM"
+    logoSymbol: omicsboardLogoSymbol,
+    bgGradient: "from-cyan-900 via-slate-900 to-indigo-900",
   },
   {
     id: "certifyer",
@@ -56,9 +84,8 @@ const platformsData = [
       "API for seamless integration with existing LMS and HR systems"
     ],
     ctaText: "Deploy Certifyer at your Institution",
-    imageBg: "bg-[#14325a]",
-    imageTitle: "Certifyer",
-    imageSub: "CREDENTIAL PLATFORM"
+    image: certifyerImg,
+    bgGradient: "from-purple-900 via-indigo-950 to-slate-950",
   },
   {
     id: "healthmania",
@@ -75,9 +102,8 @@ const platformsData = [
       "Partner network of hospitals, clinics, and health institutions"
     ],
     ctaText: "Join Healthmania",
-    imageBg: "bg-[#FF6a33]", 
-    imageTitle: "Healthmania",
-    imageSub: "DIGITAL HEALTH PLATFORM"
+    logoSymbol: healthmaniaLogoSymbol,
+    bgGradient: "from-emerald-800 via-teal-900 to-teal-950",
   }
 ];
 
@@ -168,18 +194,27 @@ const Platform = () => {
               key={platform.id}
               className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-starter`}
             >
-              {/* Visual Placeholder Side */}
+              {/* Visual Side */}
               <div 
                 className="w-full lg:w-1/2"
                 data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
               >
-                <div className={`w-full aspect-4/3 rounded-2xl ${platform.imageBg} shadow-sm overflow-hidden flex flex-col items-center justify-center text-center p-8`}>
-                  <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white font-['Fraunces'] leading-tight whitespace-pre-line mb-6">
-                    {platform.imageTitle}
-                  </h3>
-                  <p className="text-white/80 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase">
-                    {platform.imageSub}
-                  </p>
+                <div 
+                  className={`w-full aspect-4/3 rounded-2xl bg-gradient-to-br ${platform.bgGradient} shadow-sm overflow-hidden flex items-center justify-center`}
+                >
+                  {platform.image ? (
+                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden bg-white shadow-lg p-6 flex items-center justify-center hover:scale-105 transition-transform duration-500">
+                      <img
+                        src={platform.image}
+                        alt={platform.title}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      {platform.logoSymbol}
+                    </div>
+                  )}
                 </div>
               </div>
 
