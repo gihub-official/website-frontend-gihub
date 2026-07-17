@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import img1 from "../assets/hero-img.svg";
 import img2 from "../assets/image2.svg";
 import img3 from "../assets/texture.svg";
+import startupverseImg from "../assets/startupverse.jpeg";
+import certifyerImg from "../assets/certifyer.png";
 import { Aperture, Component, Command, Hexagon } from "lucide-react";
 import PlatformCard from "../components/PlatformCard";
 import AOS from "aos";
@@ -19,6 +21,34 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 
+
+const healthmaniaLogoSymbol = (
+  <div className="flex flex-col items-center justify-center text-white select-none animate-pulse">
+    <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-2xl relative overflow-hidden group">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2),transparent_60%)]" />
+      <span className="text-5xl font-bold tracking-tight text-white font-sans drop-shadow-md">
+        H
+      </span>
+    </div>
+    <span className="mt-4 text-xs font-semibold tracking-widest uppercase text-white/70">
+      Healthmania
+    </span>
+  </div>
+);
+
+const omicsboardLogoSymbol = (
+  <div className="flex flex-col items-center justify-center text-white select-none">
+    <div className="w-24 h-24 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-2xl relative overflow-hidden group">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2),transparent_60%)]" />
+      <span className="text-5xl font-bold tracking-tight text-white font-sans drop-shadow-md">
+        O
+      </span>
+    </div>
+    <span className="mt-4 text-xs font-semibold tracking-widest uppercase text-white/70">
+      OmicsBoard
+    </span>
+  </div>
+);
 
 const Home = () => {
 
@@ -174,6 +204,8 @@ const Home = () => {
         "The digital startup ecosystem where the other 90% of founders turn ideas into real startups with zero execution gaps.",
       linkText: "View platform",
       linkUrl: "https://startupverse.app",
+      image: startupverseImg,
+      bgGradient: "from-indigo-900 via-slate-900 to-indigo-950",
     },
     {
       title: "OmicsBoard",
@@ -181,6 +213,8 @@ const Home = () => {
         "Empowering life science researchers with intuitive bioinformatics and data analytics tools.",
       linkText: "View platform",
       linkUrl: "https://omicsboard.com",
+      logoSymbol: omicsboardLogoSymbol,
+      bgGradient: "from-cyan-900 via-slate-900 to-indigo-900",
     },
     {
       title: "Certifyer",
@@ -188,6 +222,8 @@ const Home = () => {
         "A secure digital credentialing platform for modern educational and professional institutions.",
       linkText: "View platform",
       linkUrl: "https://certifyer.online",
+      image: certifyerImg,
+      bgGradient: "from-purple-900 via-indigo-950 to-slate-950",
     },
     {
       title: "Healthmania",
@@ -195,6 +231,8 @@ const Home = () => {
         "Advancing digital health technologies to improve patient outcomes across the continent.",
       linkText: "View platform",
       linkUrl: "https://healthmania.app",
+      logoSymbol: healthmaniaLogoSymbol,
+      bgGradient: "from-emerald-800 via-teal-900 to-teal-950",
     },
   ];
 
@@ -309,6 +347,9 @@ const Home = () => {
                     linkText={platform.linkText}
                     linkUrl={platform.linkUrl}
                     isReversed={index % 2 !== 0}
+                    image={platform.image}
+                    logoSymbol={platform.logoSymbol}
+                    bgGradient={platform.bgGradient}
                   />
                 </div>
               ))}
