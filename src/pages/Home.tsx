@@ -62,7 +62,7 @@ const Home = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: platformsContainerRef.current,
-          start: "top 120px",
+          start: "top 80px",
           end: `+=${cards.length * 100}%`,
           pin: true,
           scrub: true,
@@ -71,12 +71,18 @@ const Home = () => {
 
       cards.forEach((card, index) => {
         // Fade out the current card to reveal the next one underneath
+        // We hold the card opacity at 1 for the first 0.5 of its scroll phase, then fade it to 0 in the remaining 0.5
         if (index < cards.length - 1) {
           tl.to(card, {
-            opacity: 0,
-            duration: 1,
+            opacity: 1,
+            duration: 0.5,
             ease: "none"
           }, index);
+          tl.to(card, {
+            opacity: 0,
+            duration: 0.5,
+            ease: "none"
+          }, index + 0.5);
         }
       });
 
@@ -258,7 +264,7 @@ const Home = () => {
 
       {/* Ecosystem Section */}
 
-      <section data-aos="slide-up" className="bg-[#F6F5EF] mt-16" ref={platformsContainerRef}>
+      <section className="bg-[#F6F5EF] mt-16">
         <section className="md:px-16">
           <section
             data-aos="slide-up"
@@ -287,7 +293,7 @@ const Home = () => {
           </section>
 
           <section
-            data-aos="slide-up"
+            ref={platformsContainerRef}
             className="rounded-none lg:rounded-2xl mt-10 px-2 pt-5 mx-auto max-w-7xl bg-[#F6F5EF]"
           >
             <div className="grid w-full platforms-timeline-wrapper">

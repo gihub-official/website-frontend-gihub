@@ -19,19 +19,19 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
   return (
     <div className={`flex flex-col w-full bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
       {/* Text Section - Left/Right Side */}
-      <div className="w-full md:w-1/2 p-10 md:p-14 flex flex-col justify-center">
-        <h3 className="text-2xl md:text-3xl font-medium text-[#0D1D2C] mb-6 my-20 font-['Fraunces']">
+      <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+        <h3 className="text-2xl md:text-3xl font-medium text-[#0D1D2C] mt-4 mb-4 font-['Fraunces']">
           {title}
         </h3>
         
-        <p className="text-[#64748B] text-base md:text-lg mb-8 leading-relaxed max-w-md pr-4">
+        <p className="text-[#64748B] text-base md:text-lg mb-6 leading-relaxed max-w-md pr-4">
           {description}
         </p>
 
         <div>
           <a
             href={linkUrl}
-            className="inline-flex items-center gap-2 bg-[#FF4103] hover:bg-[#c34415] text-white px-6 py-3 rounded-full text-sm font-medium transition-colors mb-20"
+            className="inline-flex items-center gap-2 bg-[#FF4103] hover:bg-[#c34415] text-white px-6 py-3 rounded-full text-sm font-medium transition-colors mb-4"
           >
             {linkText} <ArrowRight className="w-4 h-4" />
           </a>
