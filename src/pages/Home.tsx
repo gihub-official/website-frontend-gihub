@@ -144,7 +144,7 @@ const Home = () => {
       linkText: "View platform",
       linkUrl: "https://startupverse.app",
       image: startupverseImg,
-      bgGradient: "from-indigo-900 via-slate-900 to-indigo-950",
+      // bgGradient: "from-indigo-900 via-slate-900 to-indigo-950",
     },
     {
       title: "OmicsBoard",
@@ -162,7 +162,7 @@ const Home = () => {
       linkText: "View platform",
       linkUrl: "https://certifyer.online",
       image: certifyerImg,
-      bgGradient: "from-purple-900 via-indigo-950 to-slate-950",
+      // bgGradient: "from-purple-900 via-indigo-950 to-slate-950",
     },
     {
       title: "Healthmania",

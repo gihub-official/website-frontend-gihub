@@ -140,7 +140,7 @@ const Platform = () => {
             data-aos-delay="100"
           >
             <div className="flex flex-col justify-center h-full">
-              <div className="text-3xl lg:text-4xl mb-2 md:mb-6">🚀</div>
+              <div className="text-3xl lg:text-4xl mb-2 md:mb-6"><img src={startupverseImg} className="w-20 h-20 rounded-full bg-white" alt="" /></div>
               <h2 className="text-3xl md:text-4xl font-semibold text-white font-['Fraunces'] mb-2">StartupVerse</h2>
               <p className="text-white text-[1rem] md:text-base leading-6">Execution Engine For Founders</p>
             </div>
@@ -166,7 +166,7 @@ const Platform = () => {
             data-aos-delay="300"
           >
             <div className="flex flex-col justify-center h-full">
-              <div className="text-3xl lg:text-4xl mb-2 md:mb-6">🥇</div>
+              <div className="text-3xl lg:text-4xl mb-2 md:mb-6"><img src={certifyerImg} className="w-100 h-20" alt="" /></div>
               <h2 className="text-3xl md:text-4xl font-semibold text-white font-['Fraunces'] mb-2">Certifyer</h2>
               <p className="text-white text-[1rem] md:text-base">Digital Credential Infrastructure</p>
             </div>
@@ -203,7 +203,7 @@ const Platform = () => {
                   className={`w-full aspect-4/3 rounded-2xl bg-gradient-to-br ${platform.bgGradient} shadow-sm overflow-hidden flex items-center justify-center`}
                 >
                   {platform.image ? (
-                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden bg-white shadow-lg p-6 flex items-center justify-center hover:scale-105 transition-transform duration-500">
+                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden p-6 flex items-center justify-center hover:scale-105 transition-transform duration-500">
                       <img
                         src={platform.image}
                         alt={platform.title}
