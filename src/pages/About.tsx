@@ -478,7 +478,7 @@ const About = () => {
                   <h4 className="text-[1.25rem] md:text-[1.4rem] font-['Fraunces'] text-white mb-2">
                     Founded
                   </h4>
-                  <p className="text-white/80 text-[0.95rem]">2018</p>
+                  <p className="text-white/80 text-[0.95rem]">2024</p>
                 </div>
                 {/* Row 3 */}
                 <div>
